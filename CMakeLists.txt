@@ -7,8 +7,15 @@ include_directories(
 
 add_library(SiohEngine
 	src/SiohEngine/SiohEngine.h
-	src/SiohEngine/Core.cpp
+	
 	src/SiohEngine/Core.h
+	src/SiohEngine/Core.cpp
+
+	src/SiohEngine/Entity.h
+	src/SiohEngine/Entity.cpp
+
+	src/SiohEngine/Component.h
+	src/SiohEngine/Component.cpp
 )
 
 add_executable(game
