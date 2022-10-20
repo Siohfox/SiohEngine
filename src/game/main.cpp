@@ -13,6 +13,11 @@ struct Player : Component
 		std::cout << "Ticking "  << counter << std::endl;
 		counter++;
 	}
+
+	void OnDisplay()
+	{
+		
+	}
 };
 
 int main(int argc, char* argv[])
