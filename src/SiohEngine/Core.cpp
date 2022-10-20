@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "Entity.h"
+#include <rend/rend.h>
 #include <stdexcept>
 
 namespace SiohEngine 
@@ -37,10 +38,31 @@ namespace SiohEngine
 
 		while (m_running)
 		{
+			SDL_Event evt = { 0 };
+
+			while (SDL_PollEvent(&evt))
+			{
+				if (evt.type == SDL_QUIT)
+				{
+					m_running = false;
+				}
+			}
+
 			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
 			{
 				(*it)->Tick();
+
 			}
+
+			rend::Renderer r(640, 480);
+			r.clear();
+
+			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
+			{
+				(*it)->Display();
+			}
+
+			SDL_GL_SwapWindow(m_window);
 		}
 	}
 

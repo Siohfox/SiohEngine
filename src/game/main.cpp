@@ -31,6 +31,7 @@ int main(int argc, char* argv[])
 	std::shared_ptr<Entity> e = core->AddEntity();
 
 	e->AddComponent<Player>();
+	e->AddComponent<TriangleRenderer>();
 
 	
 

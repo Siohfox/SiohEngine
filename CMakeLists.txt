@@ -10,6 +10,20 @@ link_directories(
 	${PROJECT_SOURCE_DIR}/contrib/windows-cl-amd64/lib
 )
 
+add_library(rend
+ src/rend/Animation.cpp
+ src/rend/Buffer.cpp
+ src/rend/Mesh.cpp
+ src/rend/Model.cpp
+ src/rend/ModelRenderer.cpp
+ src/rend/RenderTexture.cpp
+ src/rend/Renderer.cpp
+ src/rend/Shader.cpp
+ src/rend/Texture.cpp
+ src/rend/rendmath.cpp
+)
+target_link_libraries(rend glew32 opengl32)
+
 add_library(SiohEngine
 	src/SiohEngine/SiohEngine.h
 	
@@ -26,7 +40,7 @@ add_library(SiohEngine
 	src/SiohEngine/Component.cpp
 )
 
-target_link_libraries(SiohEngine SDL2 SDL2main)
+target_link_libraries(SiohEngine rend SDL2 SDL2main)
 
 add_executable(game
 	src/game/main.cpp
