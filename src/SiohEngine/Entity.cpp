@@ -3,18 +3,23 @@
 
 namespace SiohEngine
 {
-	void SiohEngine::Entity::Tick()
+	std::shared_ptr<Transform> Entity::GetTransform()
 	{
-		for (std::vector<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
+		return m_transform.lock();
+	}
+
+	void Entity::Tick()
+	{
+		for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
 		{
 			(*it)->Tick();
 		}
 
 	}
 
-	void SiohEngine::Entity::Display()
+	void Entity::Display()
 	{
-		for (std::vector<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
+		for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
 		{
 			(*it)->Display();
 		}

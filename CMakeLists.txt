@@ -38,6 +38,9 @@ add_library(SiohEngine
 
 	src/SiohEngine/Component.h
 	src/SiohEngine/Component.cpp
+
+	src/SiohEngine/Transform.h
+	src/SiohEngine/Transform.cpp
 )
 
 target_link_libraries(SiohEngine rend SDL2 SDL2main)

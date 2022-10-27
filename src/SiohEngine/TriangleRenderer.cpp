@@ -2,7 +2,7 @@
 namespace SiohEngine
 {
 	TriangleRenderer::TriangleRenderer() :
-		m_shader("../data/shaders/basic.vert", "../data/shaders/basic.frag") // this might be wrong
+		m_shader("../data/shaders/basic.vert", "../data/shaders/basic.frag") 
 	{
 		m_mesh.loadTriangle();
 	}

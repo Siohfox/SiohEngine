@@ -1,5 +1,6 @@
 #include "Core.h"
 #include "Entity.h"
+#include "Transform.h"
 #include <rend/rend.h>
 #include <stdexcept>
 
@@ -76,6 +77,8 @@ namespace SiohEngine
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
 
 		m_entities.push_back(rtn);
+
+		rtn->m_transform = rtn->AddComponent<Transform>();
 
 		return rtn;
 	}

@@ -3,22 +3,22 @@
 
 namespace SiohEngine
 {
-	void SiohEngine::Component::OnTick()
+	void Component::OnTick()
 	{
 
 	}
 
-	void SiohEngine::Component::OnDisplay()
+	void Component::OnDisplay()
 	{
 
 	}
 
-	void SiohEngine::Component::Tick()
+	void Component::Tick()
 	{
 		OnTick();
 	}
 
-	void SiohEngine::Component::Display()
+	void Component::Display()
 	{
 		OnDisplay();
 	}
