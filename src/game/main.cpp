@@ -10,7 +10,7 @@ struct Player : Component
 {
 	void OnTick()
 	{
-		std::cout << "Ticking "  << counter << std::endl;
+		//std::cout << "Ticking "  << counter << std::endl;
 		counter++;
 	}
 
@@ -22,9 +22,6 @@ struct Player : Component
 
 int main(int argc, char* argv[])
 {
-
-	std::cout << "Hello";
-
 	// Initialise Engine
 	shared<Core> core = Core::Init();
 
@@ -34,6 +31,8 @@ int main(int argc, char* argv[])
 	e->AddComponent<TriangleRenderer>();
 
 	
+
+	std::cout << e->IsAlive();
 
 	core->Start();
 

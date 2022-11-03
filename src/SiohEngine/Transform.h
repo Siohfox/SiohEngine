@@ -1,6 +1,7 @@
 #include "Component.h"
 #include <vector>
 #include <rend/rend.h>
+#include "SiohMath.h"
 
 namespace SiohEngine
 {
@@ -8,9 +9,18 @@ namespace SiohEngine
 	{
 		Transform::Transform();
 
+		void SetPosition(vec3 pos) { m_position = pos; }
+
+
+		mat4 GetModel();
+
+		
+
 	private:
-		glm::vec3 m_position;
-		glm::vec3 m_rotation;
-		glm::vec3 m_scale;
+		vec3 m_position;
+		vec3 m_rotation;
+		vec3 m_scale;
+
+		void OnTick();
 	};
 }

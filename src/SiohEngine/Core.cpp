@@ -47,6 +47,13 @@ namespace SiohEngine
 				{
 					m_running = false;
 				}
+				if (evt.type == SDL_KEYDOWN)
+				{
+					if (evt.key.keysym.sym == SDLK_d)
+					{
+						
+					}
+				}
 			}
 
 			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
@@ -64,6 +71,16 @@ namespace SiohEngine
 			}
 
 			SDL_GL_SwapWindow(m_window);
+
+			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
+			{
+				if (!(*it)->IsAlive())
+				{
+					//(*it)->Destroy();
+					m_entities.erase(it);
+					--it;
+				}
+			}
 		}
 	}
 
@@ -75,6 +92,9 @@ namespace SiohEngine
 	std::shared_ptr<Entity> Core::AddEntity()
 	{
 		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
+
+		rtn->m_self = rtn;
+		rtn->m_core = m_self;
 
 		m_entities.push_back(rtn);
 

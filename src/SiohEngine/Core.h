@@ -20,6 +20,8 @@ namespace SiohEngine
 		void Start();
 		void Stop();
 
+		
+
 	private:
 		bool m_running;
 		std::weak_ptr<Core> m_self;

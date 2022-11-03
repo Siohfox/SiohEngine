@@ -1,4 +1,7 @@
 #include "TriangleRenderer.h"
+#include "Entity.h"
+#include "Transform.h"
+
 namespace SiohEngine
 {
 	TriangleRenderer::TriangleRenderer() :
@@ -9,6 +12,10 @@ namespace SiohEngine
 	void TriangleRenderer::OnDisplay()
 	{
 		rend::Renderer r(640, 480);
+
+		mat4 model = m_entity.lock()->GetTransform()->GetModel();
+		r.model(model);
+
 		r.shader(&m_shader);
 		r.mesh(&m_mesh);
 		r.render();

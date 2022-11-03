@@ -26,6 +26,8 @@ target_link_libraries(rend glew32 opengl32)
 
 add_library(SiohEngine
 	src/SiohEngine/SiohEngine.h
+
+	src/SiohEngine/SiohMath.h
 	
 	src/SiohEngine/Core.h
 	src/SiohEngine/Core.cpp

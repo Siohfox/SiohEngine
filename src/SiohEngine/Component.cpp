@@ -22,4 +22,11 @@ namespace SiohEngine
 	{
 		OnDisplay();
 	}
+
+	void Component::Kill()
+	{
+		if (!m_alive) return;
+
+		m_alive = false;
+	}
 }

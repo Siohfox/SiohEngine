@@ -1,6 +1,9 @@
 #ifndef SIOHENGINE_COMPONENT_H
 #define SIOHENGINE_COMPONENT_H
 
+#include "SiohMath.h"
+#include <memory>
+
 namespace SiohEngine
 {
 	struct Entity;
@@ -19,7 +22,13 @@ namespace SiohEngine
 		void Tick();
 		void Display();
 
-		
+		void Kill();
+
+		bool m_alive = true;
+
+	protected:
+		std::weak_ptr<Entity> m_entity;
+		std::weak_ptr<Component> m_self;
 	};
 }
 
