@@ -7,6 +7,7 @@ namespace SiohEngine
 		m_position = glm::vec3(0);
 		m_rotation = glm::vec3(0);
 		m_scale = glm::vec3(1.0f,1.0f,1.0f);
+		m_angle = 0;
 	}
 
 	mat4 Transform::GetModel()
@@ -28,7 +29,13 @@ namespace SiohEngine
 
 	void Transform::OnTick()
 	{
-		m_position += vec3(0.001f, 0.0f, 0.0f);
+		m_scale = vec3(0.5f);
+		m_position += vec3(0.002f * 0.05f,(0.03f*sin(m_angle*3.141592f/180.0f)),0.0f);
+
+		m_angle += 5;
+		//m_position += vec3(0.001f, 0.0f, 0.0f);
+
+		m_rotation.z += 1.0f;
 	}
 }
 

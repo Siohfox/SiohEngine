@@ -7,7 +7,7 @@ namespace SiohEngine
 	TriangleRenderer::TriangleRenderer() :
 		m_shader("../data/shaders/basic.vert", "../data/shaders/basic.frag") 
 	{
-		m_mesh.loadTriangle();
+		m_mesh.loadQuad();
 	}
 	void TriangleRenderer::OnDisplay()
 	{

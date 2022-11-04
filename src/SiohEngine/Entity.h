@@ -59,7 +59,6 @@ namespace SiohEngine
 		std::string m_name;
 
 		std::weak_ptr<Transform> m_transform;
-
 		std::weak_ptr<Core> m_core;
 		std::weak_ptr<Entity> m_self;
 	};

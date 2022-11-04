@@ -25,14 +25,16 @@ int main(int argc, char* argv[])
 	// Initialise Engine
 	shared<Core> core = Core::Init();
 
-	std::shared_ptr<Entity> e = core->AddEntity();
+	std::shared_ptr<Entity> entity = core->AddEntity();
 
-	e->AddComponent<Player>();
-	e->AddComponent<TriangleRenderer>();
+	entity->AddComponent<Player>();
+	entity->AddComponent<TriangleRenderer>();
+
+	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, 0.0f));
 
 	
 
-	std::cout << e->IsAlive();
+	std::cout << entity->IsAlive();
 
 	core->Start();
 

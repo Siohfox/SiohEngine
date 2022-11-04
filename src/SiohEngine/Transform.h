@@ -21,6 +21,8 @@ namespace SiohEngine
 		vec3 m_rotation;
 		vec3 m_scale;
 
+		int m_angle;
+
 		void OnTick();
 	};
 }
