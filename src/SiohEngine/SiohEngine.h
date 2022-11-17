@@ -7,5 +7,6 @@
 #include "TriangleRenderer.h"
 #include "Transform.h"
 #include "SiohMath.h"
+#include "AudioSource.h"
 
 #endif

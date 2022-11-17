@@ -46,9 +46,15 @@ add_library(SiohEngine
 
 	src/SiohEngine/Time.h
 	src/SiohEngine/Time.cpp
+
+	src/SiohEngine/AudioClip.h
+	src/SiohEngine/AudioClip.cpp
+
+	src/SiohEngine/AudioSource.h
+	src/SiohEngine/AudioSource.cpp
 )
 
-target_link_libraries(SiohEngine rend SDL2 SDL2main)
+target_link_libraries(SiohEngine rend SDL2 SDL2main openal32)
 
 add_executable(game
 	src/game/main.cpp

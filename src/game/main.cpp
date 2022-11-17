@@ -29,6 +29,7 @@ int main(int argc, char* argv[])
 	entity->AddComponent<Player>();
 	entity->AddComponent<TriangleRenderer>();
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, 0.0f));
+	entity->AddComponent<AudioSource>();
 
 	std::shared_ptr<Entity> entity2 = core->AddEntity();
 	entity2->AddComponent<Player>();

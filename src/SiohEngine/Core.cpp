@@ -1,6 +1,7 @@
 #include "Core.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Time.h"
 #include <rend/rend.h>
 #include <stdexcept>
 
@@ -29,6 +30,33 @@ namespace SiohEngine
 			throw std::runtime_error("Failed to create OpenGL context");
 		}
 
+		/*************************************************************************
+	    * Initialization
+	    *************************************************************************/
+		rtn->m_audioDevice = alcOpenDevice(NULL);
+
+		if (!rtn->m_audioDevice)
+		{
+			throw std::runtime_error("Failed to open audio device");
+		}
+
+		rtn->m_audioContext = alcCreateContext(rtn->m_audioDevice, NULL);
+
+		if (!rtn->m_audioContext)
+		{
+			alcCloseDevice(rtn->m_audioDevice);
+			throw std::runtime_error("Failed to create audio context");
+		}
+
+		if (!alcMakeContextCurrent(rtn->m_audioContext))
+		{
+			alcDestroyContext(rtn->m_audioContext);
+			alcCloseDevice(rtn->m_audioDevice);
+			throw std::runtime_error("Failed to make context current");
+		}
+
+		alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
+		//alListener3f(AL_VELOCITY, 0.0f, 0.0f, 0.0f);
 
 		return rtn;
 	}
@@ -37,8 +65,12 @@ namespace SiohEngine
 	{
 		m_running = true;
 
+		m_time = std::make_shared<Time>();
+
 		while (m_running)
 		{
+			m_time->Update();
+
 			SDL_Event evt = { 0 };
 
 			while (SDL_PollEvent(&evt))
