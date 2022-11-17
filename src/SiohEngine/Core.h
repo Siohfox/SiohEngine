@@ -11,7 +11,11 @@ namespace SiohEngine
 
 	struct Core
 	{
+		/**
+		* The destructor for Core
+		*/
 		~Core();
+
 
 		static std::shared_ptr<Core> Init();
 

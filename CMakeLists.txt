@@ -43,6 +43,9 @@ add_library(SiohEngine
 
 	src/SiohEngine/Transform.h
 	src/SiohEngine/Transform.cpp
+
+	src/SiohEngine/Time.h
+	src/SiohEngine/Time.cpp
 )
 
 target_link_libraries(SiohEngine rend SDL2 SDL2main)
