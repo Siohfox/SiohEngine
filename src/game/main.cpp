@@ -35,16 +35,19 @@ int main(int argc, char* argv[])
 	// Initialise Engine
 	shared<Core> core = Core::Init();
 
+	AudioClip clip;
+
 	std::shared_ptr<Entity> entity = core->AddEntity();
 	entity->AddComponent<Player>();
 	entity->AddComponent<TriangleRenderer>();
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
-	entity->AddComponent<AudioSource>();
+	//entity->AddComponent<AudioSource>();
+	entity->GetComponent<AudioSource>()->PlaySound(clip, 1.0f);
 
-	std::shared_ptr<Entity> entity2 = core->AddEntity();
+	/*std::shared_ptr<Entity> entity2 = core->AddEntity();
 	entity2->AddComponent<Player>();
 	entity2->AddComponent<TriangleRenderer>();
-	entity2->GetTransform()->SetPosition(vec3(-0.5f, 0.5f, -10.0f));
+	entity2->GetTransform()->SetPosition(vec3(-0.5f, 0.5f, -10.0f));*/
 
 	std::cout << entity->IsAlive();
 

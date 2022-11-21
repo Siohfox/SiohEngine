@@ -31,8 +31,10 @@ namespace SiohEngine
 		template <typename T>
 		std::shared_ptr<T> GetComponent()
 		{
-			for (std::list<Shared<Component>>::iterator it = m_components.begin(); it != m_components.end(); it++)
+			for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); it++)
 			{
+				
+
 				if (rtn)
 				{
 					return rtn;

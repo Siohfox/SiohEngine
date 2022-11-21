@@ -47,6 +47,9 @@ add_library(SiohEngine
 	src/SiohEngine/Time.h
 	src/SiohEngine/Time.cpp
 
+	src/SiohEngine/Camera.h
+	src/SiohEngine/Camera.cpp
+
 	src/SiohEngine/AudioClip.h
 	src/SiohEngine/AudioClip.cpp
 

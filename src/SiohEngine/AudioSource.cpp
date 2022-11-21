@@ -45,62 +45,30 @@ namespace SiohEngine
 	{
 		m_format = 0;
 		m_freq = 0;
+		m_volume = 1.0f;
 
 		std::vector<unsigned char> bufferData;
 		load_ogg("../dixie_horn.ogg", bufferData, m_format, m_freq);
 
-		ALuint bufferId = 0;
-		alGenBuffers(1, &bufferId);
+		m_bufferId = 0;
+		alGenBuffers(1, &m_bufferId);
 
-		alBufferData(bufferId, m_format, &bufferData.at(0),
-			static_cast<ALsizei>(bufferData.size()), m_freq);
+		alBufferData(m_bufferId, m_format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), m_freq);
 
 		/*************************************************************************
 		 * Preparing sound source
 		 *************************************************************************/
-		ALuint sourceId = 0;
-		alGenSources(1, &sourceId);
-
-		alSourcei(sourceId, AL_BUFFER, bufferId);
-		//alSource3f(sourceId, AL_POSITION, 0.0f, 0.0f, 0.0f);
-		//alSourcef(sourceId, AL_PITCH, 10);
-		//alSourcef(sourceId, AL_GAIN, vol);
-
-		/*************************************************************************
-		 * Play audio
-		 *************************************************************************/
-		alSourcePlay(sourceId);
+		m_sourceId = 0;
+		alGenSources(1, &m_sourceId);
 	}
 
-	AudioSource::AudioSource(std::string _path)
+	void AudioSource::PlaySound(AudioClip clip, ALfloat _volume)
 	{
-		m_format = 0;
-		m_freq = 0;
-
-		std::vector<unsigned char> bufferData;
-		load_ogg(_path, bufferData, m_format, m_freq);
-
-		ALuint bufferId = 0;
-		alGenBuffers(1, &bufferId);
-
-		alBufferData(bufferId, m_format, &bufferData.at(0),
-			static_cast<ALsizei>(bufferData.size()), m_freq);
-
-		/*************************************************************************
-		 * Preparing sound source
-		 *************************************************************************/
-		ALuint sourceId = 0;
-		alGenSources(1, &sourceId);
-
-		alSourcei(sourceId, AL_BUFFER, bufferId);
 		//alSource3f(sourceId, AL_POSITION, 0.0f, 0.0f, 0.0f);
 		//alSourcef(sourceId, AL_PITCH, 10);
-		//alSourcef(sourceId, AL_GAIN, vol);
-
-		/*************************************************************************
-		 * Play audio
-		 *************************************************************************/
-		alSourcePlay(sourceId);
+		alSourcef(m_sourceId, AL_GAIN, _volume);
+		alSourcePlay(m_sourceId);
+		std::cout << "Playing audio\n";
 	}
 }
 
