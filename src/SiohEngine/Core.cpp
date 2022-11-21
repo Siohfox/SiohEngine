@@ -127,10 +127,9 @@ namespace SiohEngine
 
 		rtn->m_self = rtn;
 		rtn->m_core = m_self;
+		rtn->m_transform = rtn->AddComponent<Transform>();
 
 		m_entities.push_back(rtn);
-
-		rtn->m_transform = rtn->AddComponent<Transform>();
 
 		return rtn;
 	}

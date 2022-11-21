@@ -25,6 +25,10 @@ namespace SiohEngine
 		std::shared_ptr<Entity> AddEntity();
 
 		void Start();
+
+		/*
+		* Stops the engine
+		*/
 		void Stop();
 
 		

@@ -44,6 +44,8 @@ namespace SiohEngine
 
 		std::shared_ptr<Transform> GetTransform();
 
+		std::shared_ptr<Core> GetCore();
+
 		bool IsAlive() { return m_alive; };
 		void Kill();
 

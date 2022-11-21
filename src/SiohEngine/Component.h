@@ -14,7 +14,8 @@ namespace SiohEngine
 	struct Component
 	{
 	public:
-		int counter = 0;
+		std::shared_ptr<Entity> GetEntity();
+
 
 	private:
 		friend struct Entity;
@@ -43,6 +44,8 @@ namespace SiohEngine
 		* A function which will set the alive status of the component to false
 		*/
 		void Kill();
+
+		
 
 		bool m_alive = true; ///< A bool to store alive status.
 

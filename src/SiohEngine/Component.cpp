@@ -1,5 +1,5 @@
 #include "Component.h"
-
+#include "Entity.h"
 
 namespace SiohEngine
 {
@@ -28,5 +28,10 @@ namespace SiohEngine
 		if (!m_alive) return;
 
 		m_alive = false;
+	}
+
+	std::shared_ptr<Entity> Component::GetEntity()
+	{
+		return m_entity.lock();
 	}
 }

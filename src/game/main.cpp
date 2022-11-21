@@ -8,16 +8,26 @@ using namespace SiohEngine;
 
 struct Player : Component
 {
+	Player() : m_angle(0), m_count(0) {}
+
 	void OnTick()
 	{
-		//std::cout << "Ticking "  << counter << std::endl;
-		counter++;
+		m_angle += 0.1f;
+		++m_count;
+
+		GetEntity()->GetTransform()->SetRotation(rend::vec3(0, m_angle, 0));
+
+		if (m_count > 10)
+
+		{
+			//GetEntity()->GetCore()->Stop();
+		}
 	}
 
-	void OnDisplay()
-	{
-		
-	}
+
+private:
+	float m_angle;
+	int m_count;
 };
 
 int main(int argc, char* argv[])
@@ -28,13 +38,13 @@ int main(int argc, char* argv[])
 	std::shared_ptr<Entity> entity = core->AddEntity();
 	entity->AddComponent<Player>();
 	entity->AddComponent<TriangleRenderer>();
-	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, 0.0f));
+	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
 	entity->AddComponent<AudioSource>();
 
 	std::shared_ptr<Entity> entity2 = core->AddEntity();
 	entity2->AddComponent<Player>();
 	entity2->AddComponent<TriangleRenderer>();
-	entity2->GetTransform()->SetPosition(vec3(-0.5f, 0.5f, 0.0f));
+	entity2->GetTransform()->SetPosition(vec3(-0.5f, 0.5f, -10.0f));
 
 	std::cout << entity->IsAlive();
 

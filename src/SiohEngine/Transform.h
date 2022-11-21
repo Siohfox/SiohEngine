@@ -69,6 +69,5 @@ namespace SiohEngine
 
 		int m_angle;     ///< Test for sine wave
 
-		void OnTick();
 	};
 }

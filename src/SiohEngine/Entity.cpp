@@ -1,5 +1,6 @@
 #include "Entity.h"
 #include "Component.h"
+#include "Core.h"
 
 namespace SiohEngine
 {
@@ -18,6 +19,11 @@ namespace SiohEngine
 	std::shared_ptr<Transform> Entity::GetTransform()
 	{
 		return m_transform.lock();
+	}
+
+	std::shared_ptr<Core> Entity::GetCore()
+	{
+		return m_core.lock();
 	}
 
 	void Entity::Kill()
