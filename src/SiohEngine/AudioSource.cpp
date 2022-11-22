@@ -26,7 +26,7 @@ namespace SiohEngine
 		}
 		else
 		{
-			_format = AL_FORMAT_STEREO16;
+			_format = AL_FORMAT_MONO16;
 		}
 
 		// Copy (# samples) * (1 or 2 channels) * (16 bits == 2 bytes == short)
@@ -60,15 +60,25 @@ namespace SiohEngine
 		 *************************************************************************/
 		m_sourceId = 0;
 		alGenSources(1, &m_sourceId);
+
+		
 	}
 
 	void AudioSource::PlaySound(AudioClip clip, ALfloat _volume)
 	{
 		//alSource3f(sourceId, AL_POSITION, 0.0f, 0.0f, 0.0f);
-		//alSourcef(sourceId, AL_PITCH, 10);
+		alSourcef(m_sourceId, AL_PITCH, 2);
 		alSourcef(m_sourceId, AL_GAIN, _volume);
+
+		alSourcei(m_sourceId, AL_BUFFER, m_bufferId);
 		alSourcePlay(m_sourceId);
-		std::cout << "Playing audio\n";
+	}
+
+	void AudioSource::OnTick()
+	{
+		/*AudioClip clip;
+		ALfloat volume = 1.0f;
+		PlaySound(clip, volume);*/
 	}
 }
 

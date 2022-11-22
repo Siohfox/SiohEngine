@@ -24,6 +24,8 @@ namespace SiohEngine
 		ALuint m_sourceId;
 		ALfloat m_volume;
 
+		void OnTick();
+
 		std::string m_clip;
 	};
 }

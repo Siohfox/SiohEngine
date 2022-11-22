@@ -34,6 +34,7 @@ namespace SiohEngine
 			for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); it++)
 			{
 				
+				std::shared_ptr<T> rtn = std::dynamic_pointer_cast<T>(*it);
 
 				if (rtn)
 				{
