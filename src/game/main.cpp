@@ -12,7 +12,7 @@ struct Player : Component
 
 	void OnTick()
 	{
-		m_angle += 0.1f;
+		m_angle += 1.0f;
 		++m_count;
 
 		GetEntity()->GetTransform()->SetRotation(rend::vec3(0, m_angle, 0));
@@ -36,6 +36,10 @@ int main(int argc, char* argv[])
 	shared<Core> core = Core::Init();
 
 	AudioClip clip;
+
+	std::shared_ptr<Entity> camera = core->AddEntity();
+	std::shared_ptr<Camera> mainCam = camera->AddComponent<Camera>();
+	mainCam->SetMainCam(mainCam);
 
 	std::shared_ptr<Entity> entity = core->AddEntity();
 	entity->AddComponent<Player>();

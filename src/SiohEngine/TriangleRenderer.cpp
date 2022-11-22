@@ -1,6 +1,7 @@
 #include "TriangleRenderer.h"
 #include "Entity.h"
 #include "Transform.h"
+#include "Camera.h"
 
 namespace SiohEngine
 {
@@ -15,8 +16,8 @@ namespace SiohEngine
 		mat4 model = m_entity.lock()->GetTransform()->GetModel();
 		r.shader(&m_shader);
 		r.mesh(&m_mesh);
-		r.projection(rend::perspective(rend::radians(45.0f), 1.0f, 0.1f, 100.0f));
-
+		r.projection(Camera::GetMainCam()->GetProjection());
+		r.view(Camera::GetMainCam()->GetView());
 		
 		r.model(model);
 		

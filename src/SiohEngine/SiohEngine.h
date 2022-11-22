@@ -8,5 +8,6 @@
 #include "Transform.h"
 #include "SiohMath.h"
 #include "AudioSource.h"
+#include "Camera.h"
 
 #endif
