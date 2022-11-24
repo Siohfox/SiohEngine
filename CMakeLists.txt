@@ -55,6 +55,12 @@ add_library(SiohEngine
 
 	src/SiohEngine/AudioSource.h
 	src/SiohEngine/AudioSource.cpp
+
+	src/SiohEngine/BoxCollider.h
+	src/SiohEngine/BoxCollider.cpp
+
+	src/SiohEngine/RigidBody.h
+	src/SiohEngine/RigidBody.cpp
 )
 
 target_link_libraries(SiohEngine rend SDL2 SDL2main openal32)

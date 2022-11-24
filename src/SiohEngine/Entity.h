@@ -43,7 +43,9 @@ namespace SiohEngine
 			}
 
 			std::cout << "No component found while getting component" << "\n";
+			throw std::runtime_error("Specified component not found");
 		}
+
 
 		std::shared_ptr<Transform> GetTransform();
 

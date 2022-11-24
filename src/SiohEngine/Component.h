@@ -14,7 +14,7 @@ namespace SiohEngine
 	struct Component
 	{
 	public:
-		std::shared_ptr<Entity> GetEntity();
+		std::shared_ptr<Entity>  GetEntity() const;
 
 
 	private:

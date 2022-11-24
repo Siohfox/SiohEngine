@@ -9,5 +9,8 @@
 #include "SiohMath.h"
 #include "AudioSource.h"
 #include "Camera.h"
+#include "Time.h"
+#include "BoxCollider.h"
+#include "RigidBody.h"
 
 #endif

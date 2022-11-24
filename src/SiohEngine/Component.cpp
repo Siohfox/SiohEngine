@@ -30,7 +30,7 @@ namespace SiohEngine
 		m_alive = false;
 	}
 
-	std::shared_ptr<Entity> Component::GetEntity()
+	std::shared_ptr<Entity> Component::GetEntity() const
 	{
 		return m_entity.lock();
 	}

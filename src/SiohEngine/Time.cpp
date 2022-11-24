@@ -32,5 +32,7 @@ namespace SiohEngine
         {
             SDL_Delay((Uint32)(m_frameRate - m_deltaTime) * 1000.0f); // convert back to milliseconds
         }
+
+        m_lastTime = static_cast<double>(SDL_GetTicks());
     }
 }
