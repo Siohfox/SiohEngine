@@ -39,6 +39,7 @@ struct Player2 : Component
 		m_count += 0.1 * Time::DeltaTime();;
 
 		std::cout << m_count << "\n";
+		Debug::Log("hi");
 
 		GetEntity()->GetTransform()->SetPosition(vec3(-m_count, -0.5, -10));
 	}

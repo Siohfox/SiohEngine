@@ -7,25 +7,16 @@
 
 namespace SiohEngine
 {
-
 	struct AudioSource : Component
 	{
 		AudioSource();
 		
-		ALuint GetBufferId() { return m_bufferId; }
+		
 		ALuint GetSourceId() { return m_sourceId; }
 
 		void PlaySound(AudioClip clip, ALfloat volume);
 
 	private:
-		ALenum m_format;
-		ALsizei m_freq;
-		ALuint m_bufferId;
 		ALuint m_sourceId;
-		ALfloat m_volume;
-
-		void OnTick();
-
-		std::string m_clip;
 	};
 }

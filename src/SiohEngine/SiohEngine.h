@@ -12,5 +12,7 @@
 #include "Time.h"
 #include "BoxCollider.h"
 #include "RigidBody.h"
+#include "Debug.h"
+#include "Resources.h"
 
 #endif
