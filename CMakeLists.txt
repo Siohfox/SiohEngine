@@ -61,6 +61,12 @@ add_library(SiohEngine
 
 	src/SiohEngine/RigidBody.h
 	src/SiohEngine/RigidBody.cpp
+
+	src/SiohEngine/Debug.h
+	src/SiohEngine/Debug.cpp
+
+	src/SiohEngine/Resources.h
+	src/SiohEngine/Resources.cpp
 )
 
 target_link_libraries(SiohEngine rend SDL2 SDL2main openal32)
