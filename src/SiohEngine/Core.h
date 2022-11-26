@@ -1,3 +1,6 @@
+#ifndef SIOHENGINE_CORE_H
+#define SIOHENGINE_CORE_H
+
 #include <memory>
 #include <list>
 #include <SDL2/SDL.h>
@@ -68,4 +71,4 @@ namespace SiohEngine
 		std::shared_ptr<Time> m_time;
 	};
 }
-
+#endif

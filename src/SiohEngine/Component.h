@@ -54,5 +54,4 @@ namespace SiohEngine
 		std::weak_ptr<Component> m_self; ///< A weak pointer to the component's self
 	};
 }
-
 #endif

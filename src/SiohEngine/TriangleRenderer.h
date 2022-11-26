@@ -1,3 +1,6 @@
+#ifndef SIOHENGINE_TRIANGLERENDERER_H
+#define SIOHENGINE_TRIANGLERENDERER_H
+
 #include "Component.h"
 
 #include <rend/rend.h>
@@ -27,3 +30,4 @@ namespace SiohEngine
 		void OnDisplay();
 	};
 }
+#endif

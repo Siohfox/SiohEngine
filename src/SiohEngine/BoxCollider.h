@@ -17,5 +17,4 @@ namespace SiohEngine
 		vec3 m_offset;
 	};
 }
-
 #endif

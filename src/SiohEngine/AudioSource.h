@@ -1,3 +1,6 @@
+#ifndef SIOHENGINE_AUDIOSOURCE_H
+#define SIOHENGINE_AUDIOSOURCE_H
+
 #include "Component.h"
 #include "AudioClip.h"
 #include <string>
@@ -20,3 +23,4 @@ namespace SiohEngine
 		ALuint m_sourceId;
 	};
 }
+#endif

@@ -1,3 +1,6 @@
+#ifndef SIOHENGINE_CAMERA_H
+#define SIOHENGINE_CAMERA_H
+
 #include <iostream>
 #include "Component.h"
 
@@ -23,3 +26,4 @@ namespace SiohEngine
 
 	};
 }
+#endif

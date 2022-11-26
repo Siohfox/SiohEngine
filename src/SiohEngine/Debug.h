@@ -14,5 +14,4 @@ namespace SiohEngine
 		static void LogError(std::string message);
 	};
 }
-
 #endif // !SIOHENGINE_DEBUG_H

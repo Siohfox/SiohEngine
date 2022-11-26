@@ -1,3 +1,6 @@
+#ifndef SIOHENGINE_TRANSFORM_H
+#define SIOHENGINE_TRANSFORM_H
+
 #include "Component.h"
 #include <vector>
 #include <rend/rend.h>
@@ -71,3 +74,4 @@ namespace SiohEngine
 
 	};
 }
+#endif

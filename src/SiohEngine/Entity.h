@@ -1,3 +1,5 @@
+#ifndef SIOHENGINE_ENTITY_H
+#define SIOHENGINE_ENTITY_H
 #include <memory>
 #include <vector>
 #include <rend/rend.h>
@@ -71,4 +73,4 @@ namespace SiohEngine
 	};
 	
 }
-
+#endif

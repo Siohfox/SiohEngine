@@ -1,3 +1,6 @@
+#ifndef SIOHENGINE_TIME_H
+#define SIOHENGINE_TIME_H
+
 #include <iostream>
 #include <chrono>
 #include "SDL2/SDL.h"
@@ -33,3 +36,4 @@ namespace SiohEngine
 		double m_diff;
 	};
 }
+#endif
