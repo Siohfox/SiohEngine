@@ -23,20 +23,37 @@ namespace SiohEngine
 		*/
 		~Core();
 
-
+		/**
+		 * @brief Initialiser for the core.
+		 * Initialises SDL and Audio
+		 * @return A pointer to itself
+		*/
 		static std::shared_ptr<Core> Init();
 
+		/**
+		 * @brief A function to add new entities to the hierarchy
+		 * @return A pointer to the new entity
+		*/
 		std::shared_ptr<Entity> AddEntity();
 
+		/**
+		 * @brief A function to start the engine and game loop
+		*/
 		void Start();
 
-		/*
-		* Stops the engine
+		/**
+		* @brief Stops the engine
 		*/
 		void Stop();
 
+		/**
+		 * @brief Returns the component of Type <type> if 
+		 * the entity has one attached.
+		 * @tparam T 
+		 * @param _out A component
+		*/
 		template <typename T>
-		void Find(std::vector<std::shared_ptr<T> >& _out)
+		void Find(std::vector<std::shared_ptr<T>> &_out)
 		{
 			// Go through each Entity in Core.
 			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)

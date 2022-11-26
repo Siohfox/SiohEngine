@@ -14,6 +14,11 @@ namespace SiohEngine
 	struct Component
 	{
 	public:
+
+		/**
+		 * @brief A getter for the entity this component is attached to
+		 * @return The entity this component is attached to
+		*/
 		std::shared_ptr<Entity>  GetEntity() const;
 
 
@@ -21,27 +26,27 @@ namespace SiohEngine
 		friend struct Entity;
 
 		/**
-		* A virtual function for ticking each frame.
+		* @brief A virtual function for ticking each frame.
 		*/
 		virtual void OnTick();
 
 		/**
-		* A virtual function for displaying each frame.
+		* @brief A virtual function for displaying each frame.
 		*/
 		virtual void OnDisplay();
 
 		/**
-		* A function for ticking each frame.
+		* @brief A function for ticking each frame.
 		*/
 		void Tick();
 
 		/**
-		* A function for displaying each frame.
+		* @brief A function for displaying each frame.
 		*/
 		void Display();
 
 		/**
-		* A function which will set the alive status of the component to false
+		* @brief A function which will set the alive status of the component to false
 		*/
 		void Kill();
 
