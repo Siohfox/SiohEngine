@@ -8,6 +8,9 @@ namespace SiohEngine
 {
 	struct RigidBody : Component
 	{
+		/**
+		* @brief A function for ticking each frame.
+		*/
 		void OnTick();
 	};
 }

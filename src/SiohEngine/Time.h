@@ -17,7 +17,7 @@ namespace SiohEngine
 		/**
 		* @brief A getter for delta time
 		*
-		* \return (float) The interval in seconds from the last frame to the current one 
+		* @return (float) The interval in seconds from the last frame to the current one 
 		* This value varies depending on the frames per second (FPS) rate at which your game is running.
 		*/
 		static double DeltaTime();

@@ -38,6 +38,9 @@ add_library(SiohEngine
 	src/SiohEngine/TriangleRenderer.h
 	src/SiohEngine/TriangleRenderer.cpp
 
+	src/SiohEngine/ModelRenderer.h
+	src/SiohEngine/ModelRenderer.cpp
+
 	src/SiohEngine/Component.h
 	src/SiohEngine/Component.cpp
 

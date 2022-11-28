@@ -8,6 +8,7 @@
 #include "Component.h"
 #include "Debug.h"
 #include "Entity.h"
+#include "ModelRenderer.h"
 #include "RigidBody.h"
 #include "Resources.h"
 #include "SiohMath.h"
