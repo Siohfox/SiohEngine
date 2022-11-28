@@ -57,6 +57,8 @@ struct Camewa : Component
 	{
 		m_count += 5.0f * Time::DeltaTime();
 
+		std::cout << "Current time = " << Time::GetTime() << std::endl;
+
 		//GetEntity()->GetTransform()->SetPosition(vec3(m_count, 0, 0));
 
 	}

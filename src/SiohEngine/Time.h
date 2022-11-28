@@ -22,7 +22,11 @@ namespace SiohEngine
 		*/
 		static double DeltaTime();
 
-		
+		/**
+		 * @brief Gets the current time in seconds
+		 * @return The current time in seconds
+		*/
+		static double GetTime() { return SDL_GetTicks() / 1000; }
 
 	private:
 		friend struct Core;
