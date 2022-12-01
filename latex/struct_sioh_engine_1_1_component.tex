@@ -1,0 +1,172 @@
+\hypertarget{struct_sioh_engine_1_1_component}{}\doxysection{Sioh\+Engine\+::Component Struct Reference}
+\label{struct_sioh_engine_1_1_component}\index{SiohEngine::Component@{SiohEngine::Component}}
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+Inheritance diagram for Sioh\+Engine\+::Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.846561cm]{struct_sioh_engine_1_1_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_component_a553ef1b53bd6be6383c2c5bad4847f77}{Get\+Entity}} () const
+\begin{DoxyCompactList}\small\item\em A getter for the entity this component is attached to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_component_a7586df818542198689d0ded96e745169}{m\+\_\+entity}}
+\begin{DoxyCompactList}\small\item\em A weak pointer to the entity attached. \end{DoxyCompactList}\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_component}{Component}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_component_a9c3a2b012f18113b732ca9fde6a86904}{m\+\_\+self}}
+\begin{DoxyCompactList}\small\item\em A weak pointer to the component\textquotesingle{}s self. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{struct_sioh_engine_1_1_component_a8eadf3fb5b54e1355ffb952431f7d5dd}{On\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em A virtual function for ticking each frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{struct_sioh_engine_1_1_component_ae7360df6af213df6c7b7d064aad244b2}{On\+Display}} ()
+\begin{DoxyCompactList}\small\item\em A virtual function for displaying each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_sioh_engine_1_1_component_ac6bc612ce3f25a451ffd437b00447100}{Tick}} ()
+\begin{DoxyCompactList}\small\item\em A function for ticking each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_sioh_engine_1_1_component_a48b1a06cc41b0b473e2542e7c1ee5cda}{Display}} ()
+\begin{DoxyCompactList}\small\item\em A function for displaying each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_sioh_engine_1_1_component_a41ecb1e4ddf477d188358a7261ed0110}{Kill}} ()
+\begin{DoxyCompactList}\small\item\em A function which will set the alive status of the component to false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{struct_sioh_engine_1_1_component_a1df497c7c29f227548b639672531a3f3}{m\+\_\+alive}} = true
+\begin{DoxyCompactList}\small\item\em A bool to store alive status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sioh_engine_1_1_component_a4de4c6926260be1262f425df15fc9c82}{Entity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{struct_sioh_engine_1_1_component}{Component}} class for \mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}} to allow object manipulation 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a48b1a06cc41b0b473e2542e7c1ee5cda}\label{struct_sioh_engine_1_1_component_a48b1a06cc41b0b473e2542e7c1ee5cda}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!Display@{Display}}
+\index{Display@{Display}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Component\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A function for displaying each frame. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a553ef1b53bd6be6383c2c5bad4847f77}\label{struct_sioh_engine_1_1_component_a553ef1b53bd6be6383c2c5bad4847f77}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!GetEntity@{GetEntity}}
+\index{GetEntity@{GetEntity}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{GetEntity()}{GetEntity()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}} $>$ Sioh\+Engine\+::\+Component\+::\+Get\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+A getter for the entity this component is attached to. 
+
+\begin{DoxyReturn}{Returns}
+The entity this component is attached to 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a41ecb1e4ddf477d188358a7261ed0110}\label{struct_sioh_engine_1_1_component_a41ecb1e4ddf477d188358a7261ed0110}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!Kill@{Kill}}
+\index{Kill@{Kill}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{Kill()}{Kill()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Component\+::\+Kill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A function which will set the alive status of the component to false. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_ae7360df6af213df6c7b7d064aad244b2}\label{struct_sioh_engine_1_1_component_ae7360df6af213df6c7b7d064aad244b2}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!OnDisplay@{OnDisplay}}
+\index{OnDisplay@{OnDisplay}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{OnDisplay()}{OnDisplay()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Component\+::\+On\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+A virtual function for displaying each frame. 
+
+
+
+Reimplemented in \mbox{\hyperlink{struct_sioh_engine_1_1_model_renderer_a4eaee1441dfe43f8ea01d36ea218fc1f}{Sioh\+Engine\+::\+Model\+Renderer}}, and \mbox{\hyperlink{struct_sioh_engine_1_1_triangle_renderer_adc1b6b71c36ab7e427c187db26284afa}{Sioh\+Engine\+::\+Triangle\+Renderer}}.
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a8eadf3fb5b54e1355ffb952431f7d5dd}\label{struct_sioh_engine_1_1_component_a8eadf3fb5b54e1355ffb952431f7d5dd}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!OnTick@{OnTick}}
+\index{OnTick@{OnTick}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{OnTick()}{OnTick()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Component\+::\+On\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+A virtual function for ticking each frame. 
+
+
+
+Reimplemented in \mbox{\hyperlink{struct_sioh_engine_1_1_rigid_body_aec2f7944b20285a6d97bfaf02912257f}{Sioh\+Engine\+::\+Rigid\+Body}}.
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_ac6bc612ce3f25a451ffd437b00447100}\label{struct_sioh_engine_1_1_component_ac6bc612ce3f25a451ffd437b00447100}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!Tick@{Tick}}
+\index{Tick@{Tick}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Component\+::\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A function for ticking each frame. 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a4de4c6926260be1262f425df15fc9c82}\label{struct_sioh_engine_1_1_component_a4de4c6926260be1262f425df15fc9c82}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!Entity@{Entity}}
+\index{Entity@{Entity}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{Entity}{Entity}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a1df497c7c29f227548b639672531a3f3}\label{struct_sioh_engine_1_1_component_a1df497c7c29f227548b639672531a3f3}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!m\_alive@{m\_alive}}
+\index{m\_alive@{m\_alive}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{m\_alive}{m\_alive}}
+{\footnotesize\ttfamily bool Sioh\+Engine\+::\+Component\+::m\+\_\+alive = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A bool to store alive status. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a7586df818542198689d0ded96e745169}\label{struct_sioh_engine_1_1_component_a7586df818542198689d0ded96e745169}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!m\_entity@{m\_entity}}
+\index{m\_entity@{m\_entity}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{m\_entity}{m\_entity}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}}$>$ Sioh\+Engine\+::\+Component\+::m\+\_\+entity\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A weak pointer to the entity attached. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_component_a9c3a2b012f18113b732ca9fde6a86904}\label{struct_sioh_engine_1_1_component_a9c3a2b012f18113b732ca9fde6a86904}} 
+\index{SiohEngine::Component@{SiohEngine::Component}!m\_self@{m\_self}}
+\index{m\_self@{m\_self}!SiohEngine::Component@{SiohEngine::Component}}
+\doxysubsubsection{\texorpdfstring{m\_self}{m\_self}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_sioh_engine_1_1_component}{Component}}$>$ Sioh\+Engine\+::\+Component\+::m\+\_\+self\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A weak pointer to the component\textquotesingle{}s self. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Sioh\+Engine/\mbox{\hyperlink{_component_8h}{Component.\+h}}\item 
+src/\+Sioh\+Engine/\mbox{\hyperlink{_component_8cpp}{Component.\+cpp}}\end{DoxyCompactItemize}

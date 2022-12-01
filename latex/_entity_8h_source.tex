@@ -1,0 +1,84 @@
+\hypertarget{_entity_8h_source}{}\doxysection{Entity.\+h}
+\label{_entity_8h_source}\index{src/SiohEngine/Entity.h@{src/SiohEngine/Entity.h}}
+\mbox{\hyperlink{_entity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SIOHENGINE\_ENTITY\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SIOHENGINE\_ENTITY\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <rend/rend.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_sioh_engine}{SiohEngine}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{struct }Component;}
+\DoxyCodeLine{12     \textcolor{keyword}{struct }Core;}
+\DoxyCodeLine{13     \textcolor{keyword}{struct }Transform;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}}}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{20         \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a2dd4440963a8089fd6bb6a37e87b395f}{Entity}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{26         \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a2dd4440963a8089fd6bb6a37e87b395f}{Entity}}(std::string name);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{33         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{34         std::shared\_ptr<T> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a3cd0f964b84065190b05d560a2f67dd9}{AddComponent}}()}
+\DoxyCodeLine{35         \{}
+\DoxyCodeLine{36             std::shared\_ptr<T> rtn = std::make\_shared<T>();}
+\DoxyCodeLine{37             rtn-\/>m\_self = rtn;}
+\DoxyCodeLine{38             rtn-\/>m\_entity = \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ab62f7ffba6f8b538a8b30b81a4d0bd02}{m\_self}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40             \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a629ba80e0c562702f17ddb087e556032}{m\_components}}.push\_back(rtn);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42             \textcolor{keywordflow}{return} rtn;}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{51         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{52         std::shared\_ptr<T> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ae134b34cd252701baf4c4a34373034a0}{GetComponent}}()}
+\DoxyCodeLine{53         \{}
+\DoxyCodeLine{54             \textcolor{keywordflow}{for} (std::list<std::shared\_ptr<Component>>::iterator it = \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a629ba80e0c562702f17ddb087e556032}{m\_components}}.begin(); it != \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a629ba80e0c562702f17ddb087e556032}{m\_components}}.end(); it++)}
+\DoxyCodeLine{55             \{}
+\DoxyCodeLine{56                 }
+\DoxyCodeLine{57                 std::shared\_ptr<T> rtn = std::dynamic\_pointer\_cast<T>(*it);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59                 \textcolor{keywordflow}{if} (rtn)}
+\DoxyCodeLine{60                 \{}
+\DoxyCodeLine{61                     \textcolor{keywordflow}{return} rtn;}
+\DoxyCodeLine{62                 \}}
+\DoxyCodeLine{63             \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65             std::cout << \textcolor{stringliteral}{"{}No component found while getting component"{}} << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{66             \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}Specified component not found"{}});}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 }
+\DoxyCodeLine{74         std::shared\_ptr<Transform> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ac3df4473fcb376aca5bf0b7c531f06d0}{GetTransform}}();}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{80         std::shared\_ptr<Core> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ad858f190c7a5025a5fc8fa34652acddc}{GetCore}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a19dcce27df4d0b1d2c5c6f86b2b10790}{IsAlive}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_sioh_engine_1_1_entity_aa592230af9768a06d23dc202d3ca21b2}{m\_alive}}; \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{92         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a70edb60b4ba5a16cde6f71d717f7798c}{Kill}}();}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{keyword}{private}:}
+\DoxyCodeLine{95         \textcolor{keyword}{friend} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         std::list<std::shared\_ptr<Component>> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a629ba80e0c562702f17ddb087e556032}{m\_components}};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{102         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a926dfd64b294f9490448c22294ba6eee}{Tick}}();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{107         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_entity_aad63927f18187b79466d6b2ac05c37db}{Display}}();}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_sioh_engine_1_1_entity_aa592230af9768a06d23dc202d3ca21b2}{m\_alive}} = \textcolor{keyword}{true}; }
+\DoxyCodeLine{110         std::string \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ae79033cf1aba2d4e90702d2bca43fb44}{m\_name}}; }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         std::weak\_ptr<Transform> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a80c2f060a660b0c7d76c00f3466d3049}{m\_transform}}; }
+\DoxyCodeLine{113         std::weak\_ptr<Core> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ac85619a97814a07410d7f36332416b7b}{m\_core}}; }
+\DoxyCodeLine{114         std::weak\_ptr<Entity> \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ab62f7ffba6f8b538a8b30b81a4d0bd02}{m\_self}}; }
+\DoxyCodeLine{115     \};}
+\DoxyCodeLine{116     }
+\DoxyCodeLine{117 \}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

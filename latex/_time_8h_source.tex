@@ -1,0 +1,36 @@
+\hypertarget{_time_8h_source}{}\doxysection{Time.\+h}
+\label{_time_8h_source}\index{src/SiohEngine/Time.h@{src/SiohEngine/Time.h}}
+\mbox{\hyperlink{_time_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SIOHENGINE\_TIME\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SIOHENGINE\_TIME\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}SDL2/SDL.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_sioh_engine}{SiohEngine}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_sioh_engine_1_1_time}{Time}}}
+\DoxyCodeLine{11     \{}
+\DoxyCodeLine{15         \mbox{\hyperlink{struct_sioh_engine_1_1_time_a1a0231a4db380a183509702f7a66b400}{Time}}();}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{23         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_sioh_engine_1_1_time_ae0c112c0df811f4736bc69b7a35ee68e}{DeltaTime}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_sioh_engine_1_1_time_abc444cc432d564c922ff642398618819}{GetTime}}() \{ \textcolor{keywordflow}{return} SDL\_GetTicks() / 1000; \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{private}:}
+\DoxyCodeLine{32         \textcolor{keyword}{friend} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_time_acb345afe1781ce33a76d5311eb8f735d}{Update}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_sioh_engine_1_1_time_a83bfb4b7c9ade867f6d8289c1033bc12}{m\_deltaTime}};}
+\DoxyCodeLine{37         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_sioh_engine_1_1_time_ad1488330db47eee531097417fa26b344}{m\_lastTime}};}
+\DoxyCodeLine{38         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_sioh_engine_1_1_time_a2e59083ae715139658245646a2a47736}{m\_currentTime}};}
+\DoxyCodeLine{39         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_sioh_engine_1_1_time_a7d72f54c5d6ab871c54945c15dcec0e8}{m\_frameRate}};}
+\DoxyCodeLine{40         \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_sioh_engine_1_1_time_a7fa4a56c603be6fdc456b98053608395}{m\_diff}};}
+\DoxyCodeLine{41     \};}
+\DoxyCodeLine{42 \}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

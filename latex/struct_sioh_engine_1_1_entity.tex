@@ -1,0 +1,264 @@
+\hypertarget{struct_sioh_engine_1_1_entity}{}\doxysection{Sioh\+Engine\+::Entity Struct Reference}
+\label{struct_sioh_engine_1_1_entity}\index{SiohEngine::Entity@{SiohEngine::Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_sioh_engine_1_1_entity_a2dd4440963a8089fd6bb6a37e87b395f}{Entity}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_sioh_engine_1_1_entity_a1bdd2bb7a23603d326b05e4e954cc9ee}{Entity}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Constructor for entity with a given name. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a3cd0f964b84065190b05d560a2f67dd9}{Add\+Component}} ()
+\begin{DoxyCompactList}\small\item\em A method to add components to the entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ae134b34cd252701baf4c4a34373034a0}{Get\+Component}} ()
+\begin{DoxyCompactList}\small\item\em A method to get a component attached to the entity. If there is no component found, throw an error. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_transform}{Transform}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ac3df4473fcb376aca5bf0b7c531f06d0}{Get\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em A getter to get the transform of the entity. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ad858f190c7a5025a5fc8fa34652acddc}{Get\+Core}} ()
+\begin{DoxyCompactList}\small\item\em A getter to get the core. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a19dcce27df4d0b1d2c5c6f86b2b10790}{Is\+Alive}} ()
+\begin{DoxyCompactList}\small\item\em A method to see if the entity is still alive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a70edb60b4ba5a16cde6f71d717f7798c}{Kill}} ()
+\begin{DoxyCompactList}\small\item\em A method to kill the entity. (Sets the entities alive bool to false) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a926dfd64b294f9490448c22294ba6eee}{Tick}} ()
+\begin{DoxyCompactList}\small\item\em A method to call each component\textquotesingle{}s tick. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_sioh_engine_1_1_entity_aad63927f18187b79466d6b2ac05c37db}{Display}} ()
+\begin{DoxyCompactList}\small\item\em A method to call each component\textquotesingle{}s display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_component}{Component}} $>$ $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a629ba80e0c562702f17ddb087e556032}{m\+\_\+components}}
+\item 
+bool \mbox{\hyperlink{struct_sioh_engine_1_1_entity_aa592230af9768a06d23dc202d3ca21b2}{m\+\_\+alive}} = true
+\begin{DoxyCompactList}\small\item\em A bool to see if the entity is destroyed or not. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ae79033cf1aba2d4e90702d2bca43fb44}{m\+\_\+name}}
+\begin{DoxyCompactList}\small\item\em The given name of the entity. \end{DoxyCompactList}\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_transform}{Transform}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_a80c2f060a660b0c7d76c00f3466d3049}{m\+\_\+transform}}
+\begin{DoxyCompactList}\small\item\em A pointer to the entities\textquotesingle{} transform. \end{DoxyCompactList}\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ac85619a97814a07410d7f36332416b7b}{m\+\_\+core}}
+\begin{DoxyCompactList}\small\item\em A pointer to the main core. \end{DoxyCompactList}\item 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}} $>$ \mbox{\hyperlink{struct_sioh_engine_1_1_entity_ab62f7ffba6f8b538a8b30b81a4d0bd02}{m\+\_\+self}}
+\begin{DoxyCompactList}\small\item\em A pointer to itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_sioh_engine_1_1_entity_acd0789873af2006e142a579250891ce8}{Core}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a2dd4440963a8089fd6bb6a37e87b395f}\label{struct_sioh_engine_1_1_entity_a2dd4440963a8089fd6bb6a37e87b395f}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sioh\+Engine\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for entity. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a1bdd2bb7a23603d326b05e4e954cc9ee}\label{struct_sioh_engine_1_1_entity_a1bdd2bb7a23603d326b05e4e954cc9ee}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sioh\+Engine\+::\+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor for entity with a given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the entity \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a3cd0f964b84065190b05d560a2f67dd9}\label{struct_sioh_engine_1_1_entity_a3cd0f964b84065190b05d560a2f67dd9}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ Sioh\+Engine\+::\+Entity\+::\+Add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A method to add components to the entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_aad63927f18187b79466d6b2ac05c37db}\label{struct_sioh_engine_1_1_entity_aad63927f18187b79466d6b2ac05c37db}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!Display@{Display}}
+\index{Display@{Display}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{Display()}{Display()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Entity\+::\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A method to call each component\textquotesingle{}s display. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_ae134b34cd252701baf4c4a34373034a0}\label{struct_sioh_engine_1_1_entity_ae134b34cd252701baf4c4a34373034a0}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$ T $>$ Sioh\+Engine\+::\+Entity\+::\+Get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A method to get a component attached to the entity. If there is no component found, throw an error. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component attached to the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_ad858f190c7a5025a5fc8fa34652acddc}\label{struct_sioh_engine_1_1_entity_ad858f190c7a5025a5fc8fa34652acddc}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!GetCore@{GetCore}}
+\index{GetCore@{GetCore}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{GetCore()}{GetCore()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}} $>$ Sioh\+Engine\+::\+Entity\+::\+Get\+Core (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A getter to get the core. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the core 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_ac3df4473fcb376aca5bf0b7c531f06d0}\label{struct_sioh_engine_1_1_entity_ac3df4473fcb376aca5bf0b7c531f06d0}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{GetTransform()}{GetTransform()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_sioh_engine_1_1_transform}{Transform}} $>$ Sioh\+Engine\+::\+Entity\+::\+Get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A getter to get the transform of the entity. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the transform component of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a19dcce27df4d0b1d2c5c6f86b2b10790}\label{struct_sioh_engine_1_1_entity_a19dcce27df4d0b1d2c5c6f86b2b10790}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!IsAlive@{IsAlive}}
+\index{IsAlive@{IsAlive}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{IsAlive()}{IsAlive()}}
+{\footnotesize\ttfamily bool Sioh\+Engine\+::\+Entity\+::\+Is\+Alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A method to see if the entity is still alive. 
+
+\begin{DoxyReturn}{Returns}
+The status of the entity (dead or alive) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a70edb60b4ba5a16cde6f71d717f7798c}\label{struct_sioh_engine_1_1_entity_a70edb60b4ba5a16cde6f71d717f7798c}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!Kill@{Kill}}
+\index{Kill@{Kill}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{Kill()}{Kill()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Entity\+::\+Kill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method to kill the entity. (Sets the entities alive bool to false) 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a926dfd64b294f9490448c22294ba6eee}\label{struct_sioh_engine_1_1_entity_a926dfd64b294f9490448c22294ba6eee}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!Tick@{Tick}}
+\index{Tick@{Tick}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{Tick()}{Tick()}}
+{\footnotesize\ttfamily void Sioh\+Engine\+::\+Entity\+::\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A method to call each component\textquotesingle{}s tick. 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_acd0789873af2006e142a579250891ce8}\label{struct_sioh_engine_1_1_entity_acd0789873af2006e142a579250891ce8}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!Core@{Core}}
+\index{Core@{Core}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{Core}{Core}}
+{\footnotesize\ttfamily friend struct \mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_aa592230af9768a06d23dc202d3ca21b2}\label{struct_sioh_engine_1_1_entity_aa592230af9768a06d23dc202d3ca21b2}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!m\_alive@{m\_alive}}
+\index{m\_alive@{m\_alive}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{m\_alive}{m\_alive}}
+{\footnotesize\ttfamily bool Sioh\+Engine\+::\+Entity\+::m\+\_\+alive = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A bool to see if the entity is destroyed or not. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a629ba80e0c562702f17ddb087e556032}\label{struct_sioh_engine_1_1_entity_a629ba80e0c562702f17ddb087e556032}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!m\_components@{m\_components}}
+\index{m\_components@{m\_components}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{m\_components}{m\_components}}
+{\footnotesize\ttfamily std\+::list$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{struct_sioh_engine_1_1_component}{Component}}$>$ $>$ Sioh\+Engine\+::\+Entity\+::m\+\_\+components\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_ac85619a97814a07410d7f36332416b7b}\label{struct_sioh_engine_1_1_entity_ac85619a97814a07410d7f36332416b7b}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!m\_core@{m\_core}}
+\index{m\_core@{m\_core}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{m\_core}{m\_core}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}}$>$ Sioh\+Engine\+::\+Entity\+::m\+\_\+core\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A pointer to the main core. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_ae79033cf1aba2d4e90702d2bca43fb44}\label{struct_sioh_engine_1_1_entity_ae79033cf1aba2d4e90702d2bca43fb44}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily std\+::string Sioh\+Engine\+::\+Entity\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The given name of the entity. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_ab62f7ffba6f8b538a8b30b81a4d0bd02}\label{struct_sioh_engine_1_1_entity_ab62f7ffba6f8b538a8b30b81a4d0bd02}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!m\_self@{m\_self}}
+\index{m\_self@{m\_self}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{m\_self}{m\_self}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_sioh_engine_1_1_entity}{Entity}}$>$ Sioh\+Engine\+::\+Entity\+::m\+\_\+self\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A pointer to itself. 
+
+\mbox{\Hypertarget{struct_sioh_engine_1_1_entity_a80c2f060a660b0c7d76c00f3466d3049}\label{struct_sioh_engine_1_1_entity_a80c2f060a660b0c7d76c00f3466d3049}} 
+\index{SiohEngine::Entity@{SiohEngine::Entity}!m\_transform@{m\_transform}}
+\index{m\_transform@{m\_transform}!SiohEngine::Entity@{SiohEngine::Entity}}
+\doxysubsubsection{\texorpdfstring{m\_transform}{m\_transform}}
+{\footnotesize\ttfamily std\+::weak\+\_\+ptr$<$\mbox{\hyperlink{struct_sioh_engine_1_1_transform}{Transform}}$>$ Sioh\+Engine\+::\+Entity\+::m\+\_\+transform\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+A pointer to the entities\textquotesingle{} transform. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Sioh\+Engine/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+src/\+Sioh\+Engine/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

@@ -39,7 +39,6 @@ struct Player2 : Component
 		m_count += 0.1 * Time::DeltaTime();;
 
 		std::cout << m_count << "\n";
-		Debug::Log("hi");
 
 		GetEntity()->GetTransform()->SetPosition(vec3(-m_count, -0.5, -10));
 	}
@@ -99,7 +98,7 @@ int main(int argc, char* argv[])
 	// ent 2
 	std::shared_ptr<Entity> entity2 = core->AddEntity();
 	entity2->AddComponent<Player2>();
-	entity2->AddComponent<ModelRenderer>();
+	entity2->AddComponent<TriangleRenderer>();
 	entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
 	entity2->AddComponent<BoxCollider>();
 

@@ -1,6 +1,7 @@
 #ifndef SIOHENGINE_CORE_H
 #define SIOHENGINE_CORE_H
 
+#include "Entity.h"
 #include <memory>
 #include <list>
 #include <SDL2/SDL.h>
@@ -15,6 +16,7 @@ namespace SiohEngine
 {
 	struct Entity;
 	struct Time;
+	struct Component;
 
 	struct Core
 	{

@@ -1,5 +1,4 @@
 #include "Core.h"
-#include "Entity.h"
 #include "Transform.h"
 #include "Time.h"
 #include <rend/rend.h>

@@ -1,0 +1,44 @@
+\hypertarget{_transform_8h_source}{}\doxysection{Transform.\+h}
+\label{_transform_8h_source}\index{src/SiohEngine/Transform.h@{src/SiohEngine/Transform.h}}
+\mbox{\hyperlink{_transform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SIOHENGINE\_TRANSFORM\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SIOHENGINE\_TRANSFORM\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <rend/rend.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sioh_math_8h}{SiohMath.h}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_sioh_engine}{SiohEngine}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_sioh_engine_1_1_transform}{Transform}} : \mbox{\hyperlink{struct_sioh_engine_1_1_component}{Component}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a839a499b7f39093bf543fcdb58faabec}{Transform}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{24         mat4 \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a299715930a2011d2ef8cab7a116404b6}{GetModel}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_transform_acc44ac1a76d58a0fb70e9d9a64f4a140}{SetPosition}}(\textcolor{keyword}{const} vec3 \_position) \{ \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a0876017df20d57865d53d2e9a9667767}{m\_position}} = \_position; \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a352cdc92da51f339811ce4a6e648367c}{SetRotation}}(\textcolor{keyword}{const} vec3 \_rotation) \{ \mbox{\hyperlink{struct_sioh_engine_1_1_transform_aa05e813da3c9f99cbf28f0ef0b3e7115}{m\_rotation}} = \_rotation; \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_transform_afc00aa573101b322b7de812ed94ce286}{SetScale}}(\textcolor{keyword}{const} vec3 \_scale)       \{ \mbox{\hyperlink{struct_sioh_engine_1_1_transform_aaf3e83c3b946d2f7d5d7c6b2652a1021}{m\_scale}} = \_scale; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52         \textcolor{keyword}{const} vec3 \mbox{\hyperlink{struct_sioh_engine_1_1_transform_aba3368e3034e87914b143c94352bb5fa}{GetPosition}}() \{ \textcolor{keywordflow}{return}  \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a0876017df20d57865d53d2e9a9667767}{m\_position}}; \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59         \textcolor{keyword}{const} vec3 \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a1abaa15da8c745eb5d6ced67da4c5997}{GetRotation}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_sioh_engine_1_1_transform_aa05e813da3c9f99cbf28f0ef0b3e7115}{m\_rotation}}; \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66         \textcolor{keyword}{const} vec3 \mbox{\hyperlink{struct_sioh_engine_1_1_transform_af684be006d8e3e375b5f9989b6149480}{GetScale}}()    \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_sioh_engine_1_1_transform_aaf3e83c3b946d2f7d5d7c6b2652a1021}{m\_scale}}; \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \textcolor{keyword}{private}:}
+\DoxyCodeLine{69         vec3 \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a0876017df20d57865d53d2e9a9667767}{m\_position}}; }
+\DoxyCodeLine{70         vec3 \mbox{\hyperlink{struct_sioh_engine_1_1_transform_aa05e813da3c9f99cbf28f0ef0b3e7115}{m\_rotation}}; }
+\DoxyCodeLine{71         vec3 \mbox{\hyperlink{struct_sioh_engine_1_1_transform_aaf3e83c3b946d2f7d5d7c6b2652a1021}{m\_scale}};    }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_sioh_engine_1_1_transform_a073408480ce3f769ad4dc015aaf60315}{m\_angle}};     }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \};}
+\DoxyCodeLine{76 \}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

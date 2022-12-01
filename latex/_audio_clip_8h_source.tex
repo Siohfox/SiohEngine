@@ -1,0 +1,36 @@
+\hypertarget{_audio_clip_8h_source}{}\doxysection{Audio\+Clip.\+h}
+\label{_audio_clip_8h_source}\index{src/SiohEngine/AudioClip.h@{src/SiohEngine/AudioClip.h}}
+\mbox{\hyperlink{_audio_clip_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SIOHENGINE\_AUDIOCLIP\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SIOHENGINE\_AUDIOCLIP\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <AL/al.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <AL/alc.h>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_sioh_engine}{SiohEngine}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{struct }AudioSource;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip}{AudioClip}}}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip_a2c9eac53b0f344058770abf89d95de8e}{AudioClip}}();}
+\DoxyCodeLine{20          }
+\DoxyCodeLine{25         ALuint \mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip_a1e8c97d0db7822ef22e7f9b65762ea77}{GetBufferId}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip_aa68b60ab2d7b4253f364b3c1cef16bab}{m\_bufferId}}; \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{34         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip_a7df6759317b0228b9f42bf03da918669}{load\_ogg}}(\textcolor{keyword}{const} std::string\& \_path, std::vector<unsigned char>\& \_buffer,}
+\DoxyCodeLine{35             ALenum\& \_format, ALsizei\& \_freq);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{private}:}
+\DoxyCodeLine{38         ALenum \mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip_a9dc3af8f1f96a66bda702e16b680518e}{m\_format}}; }
+\DoxyCodeLine{39         ALsizei \mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip_a62ae3b25108d63cdf41f4d8b9230ddd8}{m\_freq}}; }
+\DoxyCodeLine{40         ALuint \mbox{\hyperlink{struct_sioh_engine_1_1_audio_clip_aa68b60ab2d7b4253f364b3c1cef16bab}{m\_bufferId}}; }
+\DoxyCodeLine{41     \};}
+\DoxyCodeLine{42 \}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -13,7 +13,7 @@ namespace SiohEngine
 	*/
 	struct Transform : Component
 	{
-		Transform::Transform();
+		Transform();
 
 		/**
 		* @brief Generate the model matrix based on the position, rotation and
@@ -28,42 +28,42 @@ namespace SiohEngine
 		*
 		* @param _position The new position of the Entity.
 		*/
-		void SetPosition(vec3 _position) { m_position = _position; }
+		void SetPosition(const vec3 _position) { m_position = _position; }
 
 		/**
 		* @brief Set the rotation of an Entity.
 		*
 		* @param _rotation The new rotation of the Entity.
 		*/
-		void SetRotation(vec3 _rotation) { m_rotation = _rotation; }
+		void SetRotation(const vec3 _rotation) { m_rotation = _rotation; }
 
 		/**
 		* @brief Set the scale of an Entity.
 		*
 		* @param _scale The new scale of the Entity.
 		*/
-		void SetScale(vec3 _scale)       { m_scale = _scale; }
+		void SetScale(const vec3 _scale)       { m_scale = _scale; }
 
 		/**
 		* @brief Get the position of an Entity.
 		*
 		* @return The position of the Entity.
 		*/
-		vec3 GetPosition() { return m_position; }
+		const vec3 GetPosition() { return  m_position; }
 
 		/**
 		* @brief Get the rotation of an Entity.
 		*
 		* @return The rotation of the Entity.
 		*/
-		vec3 GetRotation() { return m_rotation; }
+		const vec3 GetRotation() { return m_rotation; }
 
 		/**
 		* @brief Get the scale of an Entity.
 		*
 		* @return The scale of the Entity.
 		*/
-		vec3 GetScale()    { return m_scale; }		
+		const vec3 GetScale()    { return m_scale; }
 
 	private:
 		vec3 m_position; ///< X, Y, Z location of Entity.

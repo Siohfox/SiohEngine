@@ -6,7 +6,7 @@
 namespace SiohEngine
 {
 	ModelRenderer::ModelRenderer() :
-		m_shader("../data/shaders/basic.vert", "../data/shaders/basic.frag")
+		m_shader("../resources/shaders/basic.vert", "../resources/shaders/basic.frag")
 	{
 		m_mesh.loadTriangle();
 		m_model = new rend::Model("../models/curuthers/curuthers.obj");

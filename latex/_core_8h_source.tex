@@ -1,0 +1,75 @@
+\hypertarget{_core_8h_source}{}\doxysection{Core.\+h}
+\label{_core_8h_source}\index{src/SiohEngine/Core.h@{src/SiohEngine/Core.h}}
+\mbox{\hyperlink{_core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SIOHENGINE\_CORE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SIOHENGINE\_CORE\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_entity_8h}{Entity.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <SDL2/SDL.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <AL/al.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <AL/alc.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define INITIAL\_WIDTH 640}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define INITIAL\_HEIGHT 480}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_sioh_engine}{SiohEngine}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keyword}{struct }Entity;}
+\DoxyCodeLine{18     \textcolor{keyword}{struct }Time;}
+\DoxyCodeLine{19     \textcolor{keyword}{struct }Component;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_sioh_engine_1_1_core}{Core}}}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{26         \mbox{\hyperlink{struct_sioh_engine_1_1_core_a46a170a829458b8821be0f7311a40688}{\string~Core}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{33         \textcolor{keyword}{static} std::shared\_ptr<Core> \mbox{\hyperlink{struct_sioh_engine_1_1_core_af02cf7f37b9c8923802262a26ca4575b}{Init}}();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39         std::shared\_ptr<Entity> \mbox{\hyperlink{struct_sioh_engine_1_1_core_a99b23f6beba39d147be23d256158740b}{AddEntity}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_core_a5a6324f09241de3338bc2c601e9034a2}{Start}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_core_aa8eb9563d181be40c444a6166bbe65af}{Stop}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{57         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_sioh_engine_1_1_core_ac047818a83f9762b9fbcae87ebbebbce}{Find}}(std::vector<std::shared\_ptr<T>> \&\_out)}
+\DoxyCodeLine{59         \{}
+\DoxyCodeLine{60             \textcolor{comment}{// Go through each Entity in Core.}}
+\DoxyCodeLine{61             \textcolor{keywordflow}{for} (std::list<std::shared\_ptr<Entity>>::iterator it = \mbox{\hyperlink{struct_sioh_engine_1_1_core_a00a7db31769828101f5f201ceea5f4be}{m\_entities}}.begin(); it != \mbox{\hyperlink{struct_sioh_engine_1_1_core_a00a7db31769828101f5f201ceea5f4be}{m\_entities}}.end(); ++it)}
+\DoxyCodeLine{62             \{}
+\DoxyCodeLine{63                 std::shared\_ptr<Entity> e = *it;}
+\DoxyCodeLine{64                 \textcolor{comment}{// Go through each Component in Entity.}}
+\DoxyCodeLine{65                 \textcolor{keywordflow}{for} (std::list<std::shared\_ptr<Component>>::iterator itt = e-\/>m\_components.begin(); itt != e-\/>m\_components.end(); ++itt)}
+\DoxyCodeLine{66                 \{}
+\DoxyCodeLine{67                     std::shared\_ptr<Component> c = *itt;}
+\DoxyCodeLine{68                     \textcolor{comment}{// Try to dynamic cast the Component to a T.}}
+\DoxyCodeLine{69                     std::shared\_ptr<T> t = std::dynamic\_pointer\_cast<T>(c);}
+\DoxyCodeLine{70                     \textcolor{comment}{// If succeeds then add it to the output array.}}
+\DoxyCodeLine{71                     \textcolor{keywordflow}{if} (t)}
+\DoxyCodeLine{72                     \{}
+\DoxyCodeLine{73                         \_out.push\_back(t);}
+\DoxyCodeLine{74                     \}}
+\DoxyCodeLine{75                 \}}
+\DoxyCodeLine{76             \}}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78         }
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keyword}{private}:}
+\DoxyCodeLine{81         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_sioh_engine_1_1_core_ad3b38f9ab62223dabdf3909d0b890215}{m\_running}};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         ALCdevice* \mbox{\hyperlink{struct_sioh_engine_1_1_core_a8be500bd5d8df8985a65d262f4b773ac}{m\_audioDevice}};}
+\DoxyCodeLine{84         ALCcontext* \mbox{\hyperlink{struct_sioh_engine_1_1_core_a3269ea67e792f4719a0398ebb0cee157}{m\_audioContext}};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         std::weak\_ptr<Core> \mbox{\hyperlink{struct_sioh_engine_1_1_core_ac2e1aa7cc3c744cba3f6585660ba41ec}{m\_self}};}
+\DoxyCodeLine{87         SDL\_Window* \mbox{\hyperlink{struct_sioh_engine_1_1_core_a626c4d4c920038727bc0064a2e677364}{m\_window}};}
+\DoxyCodeLine{88         SDL\_GLContext \mbox{\hyperlink{struct_sioh_engine_1_1_core_a6db3dc8008c1e00f3d79e634e2343b3e}{m\_context}};}
+\DoxyCodeLine{89         std::list<std::shared\_ptr<Entity>> \mbox{\hyperlink{struct_sioh_engine_1_1_core_a00a7db31769828101f5f201ceea5f4be}{m\_entities}};}
+\DoxyCodeLine{90         std::shared\_ptr<Time> \mbox{\hyperlink{struct_sioh_engine_1_1_core_adf6dbca136cad4f64658c71f076db495}{m\_time}};}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 \}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
