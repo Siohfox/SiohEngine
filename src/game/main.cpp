@@ -13,10 +13,19 @@ struct Player : Component
 	void OnTick()
 	{
 		m_angle += 1.0f;
+
 		++m_count;
 
+		shared<Input> input = std::make_shared<Input>();
 
-		GetEntity()->GetTransform()->SetRotation(rend::vec3(0, m_angle, 0));
+		/*if (input->GetKey(Keys::W))
+		{
+			Debug::Log("Hi");
+		}*/
+
+
+
+		GetEntity()->GetTransform()->SetRotation(rend::vec3(0, SDL_GetTicks() * Time::GetTime(), 0));
 		if (m_count > 10)
 
 		{

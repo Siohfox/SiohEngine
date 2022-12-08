@@ -9,7 +9,7 @@ namespace SiohEngine
 		m_freq = 0;
 
 		std::vector<unsigned char> bufferData;
-		load_ogg("../resources/dixie_horn.ogg", bufferData, m_format, m_freq);
+		load_ogg("../resources/FreeBirb.ogg", bufferData, m_format, m_freq);
 
 		m_bufferId = 0;
 		alGenBuffers(1, &m_bufferId);

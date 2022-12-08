@@ -94,7 +94,22 @@ namespace SiohEngine
 			}
 
 			rend::Renderer r(640, 480);
+
+			if (Time::GetTime() >= 10)
+			{
+				if ((int)Time::GetTime() % 2 == 0)
+				{
+					
+				}
+				r.clearColor(vec3(rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f)));
+				//r.clearColor(vec3(rend::lerp(1.0f,1.0f, sin(SDL_GetTicks() * 2.0f ))));
+
+				//glm::vec3 colour(glm::mix(0.0f, 1.0f, (float)x / lerpquad.getPosTwo().x), glm::mix(0.0f, 1.0f, (float)y / lerpquad.getPosTwo().y), sin(timer * 2.0f));
+			}
+			
+			
 			r.clear();
+			
 
 			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
 			{

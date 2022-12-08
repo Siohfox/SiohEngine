@@ -15,5 +15,6 @@
 #include "TriangleRenderer.h"
 #include "Transform.h"
 #include "Time.h"
+#include "Input.h"
 
 #endif

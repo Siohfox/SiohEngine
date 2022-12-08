@@ -101,6 +101,9 @@ add_library(SiohEngine
 
 	src/SiohEngine/Resources.h
 	src/SiohEngine/Resources.cpp
+
+	src/SiohEngine/Input.h
+	src/SiohEngine/Input.cpp
 )
 
 target_link_libraries(SiohEngine rend SDL2 ${LIBSDL2MAIN} ${LIBOPENAL})
