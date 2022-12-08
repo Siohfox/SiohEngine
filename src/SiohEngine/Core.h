@@ -77,6 +77,11 @@ namespace SiohEngine
 		}
 		
 
+		void GetResources()
+		{
+
+		}
+
 	private:
 		bool m_running;
 

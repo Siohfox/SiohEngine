@@ -88,8 +88,9 @@ int main(int argc, char* argv[])
 	// ent 1
 	std::shared_ptr<Entity> entity = core->AddEntity();
 	entity->AddComponent<Player>();
-	entity->AddComponent<TriangleRenderer>();
+	entity->AddComponent<ModelRenderer>();
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
+	entity->GetTransform()->SetScale(vec3(0.1f));
 	entity->AddComponent<AudioSource>();
 	entity->GetComponent<AudioSource>()->PlaySound(clip, 1.0f);
 	entity->AddComponent<BoxCollider>();
