@@ -38,11 +38,32 @@ namespace SiohEngine
 		void SetRotation(const vec3 _rotation) { m_rotation = _rotation; }
 
 		/**
+		* @brief Add the scale of an Entity.
+		*
+		* @param _scale The new scale of the Entity.
+		*/
+		void AddScale(const vec3 _scale)       { m_scale += _scale; }
+
+		/**
+		* @brief Add the position of an Entity.
+		*
+		* @param _position The new position of the Entity.
+		*/
+		void AddPosition(const vec3 _position) { m_position += _position; }
+
+		/**
+		* @brief Add the rotation of an Entity.
+		*
+		* @param _rotation The new rotation of the Entity.
+		*/
+		void AddRotation(const vec3 _rotation) { m_rotation += _rotation; }
+
+		/**
 		* @brief Set the scale of an Entity.
 		*
 		* @param _scale The new scale of the Entity.
 		*/
-		void SetScale(const vec3 _scale)       { m_scale = _scale; }
+		void SetScale(const vec3 _scale) { m_scale = _scale; }
 
 		/**
 		* @brief Get the position of an Entity.

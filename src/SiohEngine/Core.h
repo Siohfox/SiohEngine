@@ -18,7 +18,7 @@ namespace SiohEngine
 	struct Time;
 	struct Component;
 	struct Cache;
-	struct Input;
+	//struct Input;
 
 	struct Core
 	{
@@ -85,7 +85,7 @@ namespace SiohEngine
 	private:
 		bool m_running;
 
-		std::shared_ptr<Input> m_input;
+		//std::shared_ptr<Input> m_input;
 
 		ALCdevice* m_audioDevice;
 		ALCcontext* m_audioContext;

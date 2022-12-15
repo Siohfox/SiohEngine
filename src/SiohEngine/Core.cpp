@@ -60,7 +60,7 @@ namespace SiohEngine
 
 		rtn->m_cache = std::make_shared<Cache>();
 
-		rtn->m_input = std::make_shared<Input>();
+		//rtn->m_input = std::make_shared<Input>();
 
 		return rtn;
 	}

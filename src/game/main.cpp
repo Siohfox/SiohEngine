@@ -5,6 +5,7 @@ using namespace SiohEngine;
 
 #define shared std::shared_ptr
 #define weak std::weak_ptr
+#define transform GetEntity()->GetTransform()
 
 struct Player : Component
 {
@@ -23,14 +24,7 @@ struct Player : Component
 			Debug::Log("Hi");
 		}*/
 
-
-
-		GetEntity()->GetTransform()->SetRotation(rend::vec3(0, SDL_GetTicks() * Time::GetTime(), 0));
-		if (m_count > 10)
-
-		{
-			//GetEntity()->GetCore()->Stop();
-		}
+		GetEntity()->GetTransform()->AddRotation(rend::vec3(0, SDL_GetTicks() + m_count, 0));
 	}
 
 
@@ -47,7 +41,7 @@ struct Player2 : Component
 	{
 		m_count += 0.1 * Time::DeltaTime();;
 
-		std::cout << m_count << "\n";
+		//std::cout << m_count << "\n";
 
 		GetEntity()->GetTransform()->SetPosition(vec3(-m_count, -0.5, -10));
 	}
@@ -65,7 +59,7 @@ struct Camewa : Component
 	{
 		m_count += 5.0f * Time::DeltaTime();
 
-		std::cout << "Current time = " << Time::GetTime() << std::endl;
+		//std::cout << "Current time = " << Time::GetTime() << std::endl;
 
 		//GetEntity()->GetTransform()->SetPosition(vec3(m_count, 0, 0));
 
@@ -113,8 +107,8 @@ int main(int argc, char* argv[])
 	entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
 	entity2->AddComponent<BoxCollider>();
 
-	std::cout << "Entity x pos: " << entity->GetComponent<Transform>()->GetPosition().x;
-	std::cout << "Entity2 x pos: " << entity2->GetComponent<Transform>()->GetPosition().x;
+	/*std::cout << "Entity x pos: " << entity->GetComponent<Transform>()->GetPosition().x;
+	std::cout << "Entity2 x pos: " << entity2->GetComponent<Transform>()->GetPosition().x;*/
 
 	core->Start();
 

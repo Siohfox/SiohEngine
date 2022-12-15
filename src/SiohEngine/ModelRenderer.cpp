@@ -24,8 +24,7 @@ namespace SiohEngine
 		mr.projection(Camera::GetMainCam()->GetProjection());
 		mr.view(Camera::GetMainCam()->GetView());
 
-		((rend::Renderer*)(&mr))->model(model); // It cant figure out what model to use
-		//((rend::ModelRenderer*)(&mr))->model(m_model);
+		((rend::Renderer*)(&mr))->model(model); 
 		mr.model(m_model);
 
 		mr.depthTest(true);
