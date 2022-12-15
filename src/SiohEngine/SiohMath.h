@@ -6,6 +6,11 @@
 namespace SiohEngine
 {
 	using namespace glm;
+
+	//float naive_lerp(float a, float b, float t)
+	//{
+	//	return a + t * (b - a);
+	//}
 }
 
 #endif

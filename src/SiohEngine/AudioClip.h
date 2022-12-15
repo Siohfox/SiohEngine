@@ -1,6 +1,7 @@
 #ifndef SIOHENGINE_AUDIOCLIP_H
 #define SIOHENGINE_AUDIOCLIP_H
 
+#include "Cache.h"
 #include <iostream>
 #include <vector>
 #include <stdexcept>
@@ -14,9 +15,14 @@ namespace SiohEngine
 	//! A container for audio data
 	/*! An audio clip stores the audio file as an ogg vorbis*/
 
-	struct AudioClip
+	struct AudioClip : Resource
 	{
 		AudioClip();
+
+		/**
+		 * @brief Overriden function to load audio
+		*/
+		void OnLoad();
 		 
 		/**
 		 * @brief A getter for the buffer Id

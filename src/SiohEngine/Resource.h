@@ -8,11 +8,20 @@
 
 namespace SiohEngine
 {
+	struct Cache;
 
-	struct Resources
+	struct Resource
 	{
-	public:
 
+		public:
+		virtual void OnLoad() = 0;
+		std::string GetPath() const;
+
+	private:
+		friend struct Cache;
+
+		std::string m_path;
+		void Load();
 	};
 }
 

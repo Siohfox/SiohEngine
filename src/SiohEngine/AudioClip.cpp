@@ -5,18 +5,23 @@ namespace SiohEngine
 {
 	AudioClip::AudioClip()
 	{
+		
+
+	
+	}
+
+	void AudioClip::OnLoad()
+	{
 		m_format = 0;
 		m_freq = 0;
 
 		std::vector<unsigned char> bufferData;
-		load_ogg("../resources/FreeBirb.ogg", bufferData, m_format, m_freq);
+		load_ogg(GetPath() , bufferData, m_format, m_freq);
 
 		m_bufferId = 0;
 		alGenBuffers(1, &m_bufferId);
 
 		alBufferData(m_bufferId, m_format, &bufferData.at(0), static_cast<ALsizei>(bufferData.size()), m_freq);
-
-	
 	}
 
 	void AudioClip::load_ogg(const std::string& _path, std::vector<unsigned char>& _buffer, ALenum& _format, ALsizei& _freq)

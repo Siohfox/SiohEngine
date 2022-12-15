@@ -99,11 +99,23 @@ add_library(SiohEngine
 	src/SiohEngine/Debug.h
 	src/SiohEngine/Debug.cpp
 
-	src/SiohEngine/Resources.h
-	src/SiohEngine/Resources.cpp
+	src/SiohEngine/Resource.h
+	src/SiohEngine/Resource.cpp
 
 	src/SiohEngine/Input.h
 	src/SiohEngine/Input.cpp
+
+	src/SiohEngine/Shader.h
+	src/SiohEngine/Shader.cpp
+
+	src/SiohEngine/Texture.h
+	src/SiohEngine/Texture.cpp
+
+	src/SiohEngine/Model.h
+	src/SiohEngine/Model.cpp
+
+	src/SiohEngine/Cache.h
+	src/SiohEngine/Cache.cpp
 )
 
 target_link_libraries(SiohEngine rend SDL2 ${LIBSDL2MAIN} ${LIBOPENAL})

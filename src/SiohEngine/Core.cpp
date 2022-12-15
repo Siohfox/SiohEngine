@@ -1,6 +1,7 @@
 #include "Core.h"
 #include "Transform.h"
 #include "Time.h"
+#include "Cache.h"
 #include <rend/rend.h>
 #include <stdexcept>
 
@@ -57,6 +58,10 @@ namespace SiohEngine
 		alListener3f(AL_POSITION, 0.0f, 0.0f, 0.0f);
 		//alListener3f(AL_VELOCITY, 0.0f, 0.0f, 0.0f);
 
+		rtn->m_cache = std::make_shared<Cache>();
+
+		rtn->m_input = std::make_shared<Input>();
+
 		return rtn;
 	}
 
@@ -82,7 +87,7 @@ namespace SiohEngine
 				{
 					if (evt.key.keysym.sym == SDLK_d)
 					{
-						
+						std::cout << "hi";
 					}
 				}
 			}
@@ -101,9 +106,8 @@ namespace SiohEngine
 				{
 					
 				}
-				r.clearColor(vec3(rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f)));
-				//r.clearColor(vec3(rend::lerp(1.0f,1.0f, sin(SDL_GetTicks() * 2.0f ))));
-
+				//r.clearColor(vec3(rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f)));
+				//r.clearColor(vec3(glm::lerp(glm::vec3(0), glm::vec3(1), 1.0f)));
 				//glm::vec3 colour(glm::mix(0.0f, 1.0f, (float)x / lerpquad.getPosTwo().x), glm::mix(0.0f, 1.0f, (float)y / lerpquad.getPosTwo().y), sin(timer * 2.0f));
 			}
 			
@@ -133,6 +137,11 @@ namespace SiohEngine
 	void Core::Stop()
 	{
 		m_running = false;
+	}
+
+	std::shared_ptr<Cache> Core::GetCache()
+	{
+		return m_cache;
 	}
 
 	std::shared_ptr<Entity> Core::AddEntity()

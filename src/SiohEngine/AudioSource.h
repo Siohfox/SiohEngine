@@ -28,7 +28,7 @@ namespace SiohEngine
 		 * @param clip The audio clip to play
 		 * @param volume How loud to play the clip (0.0f - 1.0f)
 		*/
-		void PlaySound(AudioClip clip, ALfloat volume);
+		void PlaySound(std::shared_ptr<AudioClip> clip, ALfloat volume);
 
 		void SetAudio();
 

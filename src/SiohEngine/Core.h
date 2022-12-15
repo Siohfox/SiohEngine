@@ -17,6 +17,8 @@ namespace SiohEngine
 	struct Entity;
 	struct Time;
 	struct Component;
+	struct Cache;
+	struct Input;
 
 	struct Core
 	{
@@ -77,16 +79,17 @@ namespace SiohEngine
 		}
 		
 
-		void GetResources()
-		{
+		std::shared_ptr<Cache> GetCache();
 
-		}
 
 	private:
 		bool m_running;
 
+		std::shared_ptr<Input> m_input;
+
 		ALCdevice* m_audioDevice;
 		ALCcontext* m_audioContext;
+		std::shared_ptr<Cache> m_cache;
 
 		std::weak_ptr<Core> m_self;
 		SDL_Window* m_window;

@@ -16,7 +16,7 @@ struct Player : Component
 
 		++m_count;
 
-		shared<Input> input = std::make_shared<Input>();
+		
 
 		/*if (input->GetKey(Keys::W))
 		{
@@ -81,7 +81,8 @@ int main(int argc, char* argv[])
 	// Initialise Engine
 	shared<Core> core = Core::Init();
 
-	AudioClip clip;
+	//AudioClip clip;
+	std::shared_ptr<AudioClip> clip = core->GetCache()->load<AudioClip>("../resources/FreeBirb.ogg");
 
 	/*************************************************************************
 	* Camera set up
