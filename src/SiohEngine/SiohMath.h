@@ -7,10 +7,10 @@ namespace SiohEngine
 {
 	using namespace glm;
 
-	//float naive_lerp(float a, float b, float t)
-	//{
-	//	return a + t * (b - a);
-	//}
+	struct Math
+	{
+		static float Lerp(float a, float b, float t) { return (1 - t) * a + t * b; }	
+	};
 }
 
 #endif

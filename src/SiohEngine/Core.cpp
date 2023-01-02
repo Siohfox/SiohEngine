@@ -71,6 +71,16 @@ namespace SiohEngine
 
 		m_time = std::make_shared<Time>();
 
+		glm::vec3 lastCol;
+		float timer = 0.0f;
+
+		const glm::vec3 startColor = glm::vec3(1.0f, 0.0f, 0.0f); // red
+		const glm::vec3 endColor = glm::vec3(0.0f, 1.0f, 0.0f); // green
+
+		const float startTime = 0.0f;
+		const float endTime = 0.1f;
+		float t = 0.0f;
+
 		while (m_running)
 		{
 			m_time->Update();
@@ -100,15 +110,19 @@ namespace SiohEngine
 
 			rend::Renderer r(640, 480);
 
-			if (Time::GetTime() >= 10)
-			{
-				if ((int)Time::GetTime() % 2 == 0)
-				{
-					
-				}
-				//r.clearColor(vec3(rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f), rend::linearRand(0.0f, 1.0f)));
-				//r.clearColor(vec3(glm::lerp(glm::vec3(0), glm::vec3(1), 1.0f)));
-				//glm::vec3 colour(glm::mix(0.0f, 1.0f, (float)x / lerpquad.getPosTwo().x), glm::mix(0.0f, 1.0f, (float)y / lerpquad.getPosTwo().y), sin(timer * 2.0f));
+
+			float elapsedTime = Time::GetTimeMilliSeconds() / 1000;
+
+			// Calculate the interpolation factor t
+			t = (elapsedTime - startTime) / (endTime - startTime);
+
+			if (Time::GetTimeSeconds() >= 10)
+			{		
+				lastCol.x = Math::Lerp(startColor.x, endColor.x, (sin(t) + 1) / 2);
+				lastCol.y = Math::Lerp(startColor.y, endColor.y, (sin(t) + 1) / 2);
+				lastCol.z = Math::Lerp(startColor.z, endColor.z, (sin(t) + 1) / 2);
+
+				r.clearColor(lastCol);
 			}
 			
 			

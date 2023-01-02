@@ -26,7 +26,13 @@ namespace SiohEngine
 		 * @brief Gets the current time in seconds
 		 * @return The current time in seconds
 		*/
-		static double GetTime() { return SDL_GetTicks() / 1000; }
+		static double GetTimeSeconds() { return SDL_GetTicks() / 1000; }
+
+		/**
+		 * @brief Gets the current time in milliseconds
+		 * @return The current time in milliseconds
+		*/
+		static double GetTimeMilliSeconds() { return SDL_GetTicks(); }
 
 	private:
 		friend struct Core;
