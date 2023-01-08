@@ -9,28 +9,25 @@ using namespace SiohEngine;
 
 struct Player : Component
 {
-	Player() : m_angle(0), m_count(0) {}
+	Player() : m_count(0) {}
 
 	void OnTick()
 	{
-		m_angle += 1.0f;
-
-		++m_count;
+	 m_count += 0.5f * Time::DeltaTime();
 
 		
-
-		/*if (input->GetKey(Keys::W))
+	 shared<Input> input = std::make_shared<Input>();
+		if (input->GetKey(Keys::W))
 		{
 			Debug::Log("Hi");
-		}*/
+		}
 
-		GetEntity()->GetTransform()->AddRotation(rend::vec3(0, SDL_GetTicks() + m_count, 0));
+		GetEntity()->GetTransform()->AddRotation(rend::vec3(0, m_count, 0));
 	}
 
 
 private:
-	float m_angle;
-	int m_count;
+	float m_count;
 };
 
 struct Player2 : Component
@@ -58,10 +55,6 @@ struct Camewa : Component
 	void OnTick()
 	{
 		m_count += 5.0f * Time::DeltaTime();
-
-		//std::cout << "Current time = " << Time::GetTime() << std::endl;
-
-		//GetEntity()->GetTransform()->SetPosition(vec3(m_count, 0, 0));
 
 	}
 
@@ -101,11 +94,11 @@ int main(int argc, char* argv[])
 	entity->AddComponent<RigidBody>();
 
 	// ent 2
-	std::shared_ptr<Entity> entity2 = core->AddEntity();
-	entity2->AddComponent<Player2>();
-	entity2->AddComponent<TriangleRenderer>();
-	entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
-	entity2->AddComponent<BoxCollider>();
+	//std::shared_ptr<Entity> entity2 = core->AddEntity();
+	//entity2->AddComponent<Player2>();
+	//entity2->AddComponent<TriangleRenderer>();
+	//entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
+	//entity2->AddComponent<BoxCollider>();
 
 	/*std::cout << "Entity x pos: " << entity->GetComponent<Transform>()->GetPosition().x;
 	std::cout << "Entity2 x pos: " << entity2->GetComponent<Transform>()->GetPosition().x;*/

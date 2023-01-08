@@ -4,6 +4,7 @@
 #include "Cache.h"
 #include <rend/rend.h>
 #include <stdexcept>
+#include "Input.h"
 
 namespace SiohEngine 
 {
@@ -85,20 +86,63 @@ namespace SiohEngine
 		{
 			m_time->Update();
 
-			SDL_Event evt = { 0 };
+			SDL_Event event = { 0 };
 
-			while (SDL_PollEvent(&evt))
+			while (SDL_PollEvent(&event))
 			{
-				if (evt.type == SDL_QUIT)
+				switch (event.type)
 				{
+				case SDL_QUIT:
 					m_running = false;
-				}
-				if (evt.type == SDL_KEYDOWN)
-				{
-					if (evt.key.keysym.sym == SDLK_d)
+					break;
+
+				case SDL_KEYDOWN:
+					if (!m_input->GetKey(event.key.keysym.sym))
 					{
-						std::cout << "hi";
+						std::cout << "keydown" << std::endl;
+						m_input->keyDown.push_back(event.key.keysym.sym);
+						//m_input->keys.push_back(event.key.keysym.sym);
 					}
+					break;
+
+				case SDL_KEYUP:
+					if (m_input->GetKeyUp(event.key.keysym.sym))
+					{
+						std::cout << "keyup" << std::endl;
+						//m_input->keys.remove(event.key.keysym.sym);
+						m_input->keyUp.push_back(event.key.keysym.sym);
+					}
+					break;
+
+				//case SDL_MOUSEBUTTONDOWN:
+				//	button = (int)event.button.button;
+				//	std::cout << event.button.button << std::endl;
+				//	if (m_input->getButton(button))
+				//	{
+				//		std::cout << event.button.button << std::endl;
+				//		m_input->buttons.push_back(button);
+				//		m_input->buttonDown.push_back(button);
+				//	}
+				//	break;
+
+				//case SDL_MOUSEBUTTONUP:
+				//	button = (int)event.button.button;
+				//	if (m_input->getButton(button))
+				//	{
+				//		std::cout << "mouseButtonUp" << std::endl;
+				//		m_input->buttons.remove(button);
+				//		m_input->buttonUp.push_back(button);
+				//	}
+				//	break;
+
+				//case SDL_MOUSEMOTION:
+
+				//	m_input->mousePos.x = event.motion.x;
+				//	m_input->mousePos.y = event.motion.y;
+
+				//	m_input->mouseInp.x += event.motion.xrel;
+				//	m_input->mouseInp.y += event.motion.yrel;
+				//	break;
 				}
 			}
 
@@ -111,7 +155,7 @@ namespace SiohEngine
 			rend::Renderer r(640, 480);
 
 
-			float elapsedTime = Time::GetTimeMilliSeconds() / 1000;
+			double elapsedTime = Time::GetTimeMilliSeconds() / 1000.0f;
 
 			// Calculate the interpolation factor t
 			t = (elapsedTime - startTime) / (endTime - startTime);

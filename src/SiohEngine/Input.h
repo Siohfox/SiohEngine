@@ -10,10 +10,10 @@ namespace SiohEngine
 	struct Input
 	{
 	public:
-
+		bool GetKey(SDL_Keycode code);
 		bool GetKeyDown(SDL_Keycode code);
 		bool GetKeyUp(SDL_Keycode code);
-		bool GetKey(SDL_Keycode code);
+		
 
 	private:
 		friend struct Core;

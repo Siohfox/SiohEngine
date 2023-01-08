@@ -2,13 +2,13 @@
 
 namespace SiohEngine 
 {
-	std::list<SDL_KeyCode> keys = {};
-	std::list<SDL_Keycode> keyDown = {};
-	std::list<SDL_Keycode> keyUp = {};
+	std::list<SDL_KeyCode> Input::keys = {};
+	std::list<SDL_Keycode> Input::keyDown = {};
+	std::list<SDL_Keycode> Input::keyUp = {};
 
-	bool GetKeyDown(SDL_Keycode code)
+	bool Input::GetKeyDown(SDL_Keycode code)
 	{
-		for (auto it = keyDown.begin(); it != keyDown.end(); it++)
+		for (auto it = Input::keyDown.begin(); it != Input::keyDown.end(); it++)
 		{
 			if ((*it) == code)
 			{
@@ -18,9 +18,9 @@ namespace SiohEngine
 		return false;
 	}
 
-	bool GetKeyUp(SDL_Keycode code)
+	bool Input::GetKeyUp(SDL_Keycode code)
 	{
-		for (auto it = keyUp.begin(); it != keyUp.end(); it++)
+		for (auto it = Input::keyUp.begin(); it != Input::keyUp.end(); it++)
 		{
 			if ((*it) == code)
 			{
@@ -30,9 +30,9 @@ namespace SiohEngine
 		return false;
 	}
 
-	bool GetKey(SDL_Keycode code)
+	bool Input::GetKey(SDL_Keycode code)
 	{
-		for (auto it = keys.begin(); it != keys.end(); it++)
+		for (auto it = Input::keys.begin(); it != Input::keys.end(); it++)
 		{
 			if ((*it) == code)
 			{
