@@ -80,6 +80,7 @@ namespace SiohEngine
 		
 
 		std::shared_ptr<Cache> GetCache();
+		std::shared_ptr<Input> GetInput();
 
 
 	private:

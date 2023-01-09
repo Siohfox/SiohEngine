@@ -116,6 +116,9 @@ add_library(SiohEngine
 
 	src/SiohEngine/Cache.h
 	src/SiohEngine/Cache.cpp
+
+	src/SiohEngine/Skybox.h
+	src/SiohEngine/Skybox.cpp
 )
 
 target_link_libraries(SiohEngine rend SDL2 ${LIBSDL2MAIN} ${LIBOPENAL})

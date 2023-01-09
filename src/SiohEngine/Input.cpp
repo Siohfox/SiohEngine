@@ -2,7 +2,7 @@
 
 namespace SiohEngine 
 {
-	std::list<SDL_KeyCode> Input::keys = {};
+	std::list<SDL_Keycode> Input::keys = {};
 	std::list<SDL_Keycode> Input::keyDown = {};
 	std::list<SDL_Keycode> Input::keyUp = {};
 
@@ -12,6 +12,7 @@ namespace SiohEngine
 		{
 			if ((*it) == code)
 			{
+				keyDown.remove(*it);
 				return true;
 			}
 		}
@@ -24,6 +25,7 @@ namespace SiohEngine
 		{
 			if ((*it) == code)
 			{
+				keyUp.remove(*it);
 				return true;
 			}
 		}

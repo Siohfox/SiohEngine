@@ -6,6 +6,7 @@ using namespace SiohEngine;
 #define shared std::shared_ptr
 #define weak std::weak_ptr
 #define transform GetEntity()->GetTransform()
+#define input GetEntity()->GetCore()->GetInput()
 
 struct Player : Component
 {
@@ -15,14 +16,13 @@ struct Player : Component
 	{
 	 m_count += 0.5f * Time::DeltaTime();
 
-		
-	 shared<Input> input = std::make_shared<Input>();
 		if (input->GetKey(Keys::W))
 		{
 			Debug::Log("Hi");
 		}
 
 		GetEntity()->GetTransform()->AddRotation(rend::vec3(0, m_count, 0));
+
 	}
 
 
@@ -54,8 +54,8 @@ struct Camewa : Component
 
 	void OnTick()
 	{
-		m_count += 5.0f * Time::DeltaTime();
-
+		m_count += 0.8f * Time::DeltaTime();
+		
 	}
 
 

@@ -84,9 +84,10 @@ namespace SiohEngine
 
 		while (m_running)
 		{
+			// Update the time
 			m_time->Update();
 
-			SDL_Event event = { 0 };
+			SDL_Event event = { 0 }; // Creat event handler
 
 			while (SDL_PollEvent(&event))
 			{
@@ -101,7 +102,7 @@ namespace SiohEngine
 					{
 						std::cout << "keydown" << std::endl;
 						m_input->keyDown.push_back(event.key.keysym.sym);
-						//m_input->keys.push_back(event.key.keysym.sym);
+						m_input->keys.push_back(event.key.keysym.sym);
 					}
 					break;
 
@@ -109,50 +110,20 @@ namespace SiohEngine
 					if (m_input->GetKeyUp(event.key.keysym.sym))
 					{
 						std::cout << "keyup" << std::endl;
-						//m_input->keys.remove(event.key.keysym.sym);
+						m_input->keys.remove(event.key.keysym.sym);
 						m_input->keyUp.push_back(event.key.keysym.sym);
 					}
 					break;
-
-				//case SDL_MOUSEBUTTONDOWN:
-				//	button = (int)event.button.button;
-				//	std::cout << event.button.button << std::endl;
-				//	if (m_input->getButton(button))
-				//	{
-				//		std::cout << event.button.button << std::endl;
-				//		m_input->buttons.push_back(button);
-				//		m_input->buttonDown.push_back(button);
-				//	}
-				//	break;
-
-				//case SDL_MOUSEBUTTONUP:
-				//	button = (int)event.button.button;
-				//	if (m_input->getButton(button))
-				//	{
-				//		std::cout << "mouseButtonUp" << std::endl;
-				//		m_input->buttons.remove(button);
-				//		m_input->buttonUp.push_back(button);
-				//	}
-				//	break;
-
-				//case SDL_MOUSEMOTION:
-
-				//	m_input->mousePos.x = event.motion.x;
-				//	m_input->mousePos.y = event.motion.y;
-
-				//	m_input->mouseInp.x += event.motion.xrel;
-				//	m_input->mouseInp.y += event.motion.yrel;
-				//	break;
 				}
 			}
 
+			// Tick every entity that exists
 			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
 			{
 				(*it)->Tick();
-
 			}
 
-			rend::Renderer r(640, 480);
+			rend::Renderer r(640, 480); // Creating a renderer
 
 
 			double elapsedTime = Time::GetTimeMilliSeconds() / 1000.0f;
@@ -169,10 +140,9 @@ namespace SiohEngine
 				r.clearColor(lastCol);
 			}
 			
-			
 			r.clear();
 			
-
+			// Display every entity that exists
 			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
 			{
 				(*it)->Display();
@@ -180,11 +150,11 @@ namespace SiohEngine
 
 			SDL_GL_SwapWindow(m_window);
 
+			// Erase dead entities
 			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
 			{
 				if (!(*it)->IsAlive())
 				{
-					//(*it)->Destroy();
 					m_entities.erase(it);
 					--it;
 				}
@@ -200,6 +170,11 @@ namespace SiohEngine
 	std::shared_ptr<Cache> Core::GetCache()
 	{
 		return m_cache;
+	}
+
+	std::shared_ptr<Input> Core::GetInput()
+	{
+		return m_input;
 	}
 
 	std::shared_ptr<Entity> Core::AddEntity()

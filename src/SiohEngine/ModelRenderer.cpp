@@ -9,10 +9,12 @@ namespace SiohEngine
 		m_shader("../resources/shaders/basic.vert", "../resources/shaders/basic.frag"),
 		//m_texture("../resources/models/curuthers/Whiskers_diffuse.png")
 		m_texture("../resources/models/maxwell/Maxwell_Diffuse.bmp")
+		//m_texture("../resources/models/banana/ripe-banana_u1_v1.png")
 	{
 		m_mesh.loadTriangle();
 		//m_model = new rend::Model("../resources/models/curuthers/curuthers.obj");
 		m_model = new rend::Model("../resources/models/maxwell/Maxwell.obj");
+		//m_model = new rend::Model("../resources/models/banana/ripe-banana.obj");
 	}
 
 	void ModelRenderer::OnDisplay()

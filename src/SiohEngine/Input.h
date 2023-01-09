@@ -18,7 +18,7 @@ namespace SiohEngine
 	private:
 		friend struct Core;
 
-		static std::list<SDL_KeyCode> keys;
+		static std::list<SDL_Keycode> keys;
 		static std::list<SDL_Keycode> keyDown;
 		static std::list<SDL_Keycode> keyUp;
 	};
