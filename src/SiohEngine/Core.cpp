@@ -82,12 +82,21 @@ namespace SiohEngine
 		const float endTime = 0.1f;
 		float t = 0.0f;
 
+		float idealTime = 1.0f / 60.0f;
+		
+
+
 		while (m_running)
 		{
 			// Update the time
 			m_time->Update();
 
 			SDL_Event event = { 0 }; // Creat event handler
+
+			if (idealTime > Time::DeltaTime())
+			{
+				SDL_Delay((idealTime - Time::DeltaTime()) * 1000.0f);
+			}
 
 			while (SDL_PollEvent(&event))
 			{
@@ -107,7 +116,7 @@ namespace SiohEngine
 					break;
 
 				case SDL_KEYUP:
-					if (m_input->GetKeyUp(event.key.keysym.sym))
+					if (m_input->GetKey(event.key.keysym.sym))
 					{
 						std::cout << "keyup" << std::endl;
 						m_input->keys.remove(event.key.keysym.sym);

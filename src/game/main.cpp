@@ -18,7 +18,12 @@ struct Player : Component
 
 		if (input->GetKey(Keys::W))
 		{
-			Debug::Log("Hi");
+			transform->AddPosition(vec3(0.0f, 0.0f, -0.1f));
+		}
+
+		if (input->GetKey(Keys::S))
+		{
+			transform->AddPosition(vec3(0.0f, 0.0f, 0.1f));
 		}
 
 		GetEntity()->GetTransform()->AddRotation(rend::vec3(0, m_count, 0));
