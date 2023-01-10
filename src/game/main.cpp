@@ -16,6 +16,7 @@ struct Player : Component
 	{
 	 m_count += 0.5f * Time::DeltaTime();
 
+
 		if (input->GetKey(Keys::W))
 		{
 			transform->AddPosition(vec3(0.0f, 0.0f, -0.1f));
@@ -24,6 +25,16 @@ struct Player : Component
 		if (input->GetKey(Keys::S))
 		{
 			transform->AddPosition(vec3(0.0f, 0.0f, 0.1f));
+		}
+
+		if (input->GetKey(Keys::A))
+		{
+			transform->AddPosition(vec3(-0.1f, 0.0f, 0.0f));
+		}
+
+		if (input->GetKey(Keys::D))
+		{
+			transform->AddPosition(vec3(0.1f, 0.0f, 0.0f));
 		}
 
 		GetEntity()->GetTransform()->AddRotation(rend::vec3(0, m_count, 0));
@@ -91,6 +102,8 @@ int main(int argc, char* argv[])
 	std::shared_ptr<Entity> entity = core->AddEntity();
 	entity->AddComponent<Player>();
 	entity->AddComponent<ModelRenderer>();
+	entity->GetComponent<ModelRenderer>()->SetModel("../resources/models/maxwell/Maxwell.obj");
+	entity->GetComponent<ModelRenderer>()->SetTexture("../resources/models/maxwell/Maxwell_Diffuse.bmp");
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
 	entity->GetTransform()->SetScale(vec3(0.1f));
 	entity->AddComponent<AudioSource>();
@@ -99,11 +112,13 @@ int main(int argc, char* argv[])
 	entity->AddComponent<RigidBody>();
 
 	// ent 2
-	//std::shared_ptr<Entity> entity2 = core->AddEntity();
-	//entity2->AddComponent<Player2>();
-	//entity2->AddComponent<TriangleRenderer>();
-	//entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
-	//entity2->AddComponent<BoxCollider>();
+	std::shared_ptr<Entity> entity2 = core->AddEntity();
+	entity2->AddComponent<Player2>();
+	entity2->AddComponent<ModelRenderer>();
+	entity2->GetComponent<ModelRenderer>()->SetModel("../resources/models/banana/ripe-banana.obj");
+	entity2->GetComponent<ModelRenderer>()->SetTexture("../resources/models/banana/ripe-banana_u1_v1.png");
+	entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
+	entity2->AddComponent<BoxCollider>();
 
 	/*std::cout << "Entity x pos: " << entity->GetComponent<Transform>()->GetPosition().x;
 	std::cout << "Entity2 x pos: " << entity2->GetComponent<Transform>()->GetPosition().x;*/
