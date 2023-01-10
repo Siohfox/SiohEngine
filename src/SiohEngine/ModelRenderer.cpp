@@ -9,18 +9,18 @@ namespace SiohEngine
 		m_modelRenderer(640, 480),
 		m_shader("../resources/shaders/basic.vert", "../resources/shaders/basic.frag")
 	{
-		
+		//m_model = new rend::Model("../resources/models/maxwell/Maxwell.obj");
 	}
 
-	void ModelRenderer::SetTexture(std::string texturePath)
+	void ModelRenderer::SetTexture(std::shared_ptr<TextureLoad> texturePath)
 	{
-		m_texture = rend::Texture(texturePath.c_str());
-		m_modelRenderer.texture(&m_texture);
+		m_texture = texturePath->GetRenderTexture();
+		m_modelRenderer.texture(m_texture);
 	}
 
-	void ModelRenderer::SetModel(std::string modelPath)
+	void ModelRenderer::SetModel(std::shared_ptr<ModelLoad> modelPath)
 	{
-		m_model = new rend::Model(modelPath.c_str());
+		m_model = modelPath->GetRenderModel();
 	}
 
 	void ModelRenderer::OnDisplay()
@@ -38,7 +38,7 @@ namespace SiohEngine
 		m_modelRenderer.backfaceCull(true);
 		m_modelRenderer.blend(true);
 
-		m_modelRenderer.texture(&m_texture);
+		m_modelRenderer.texture(m_texture);
 
 		m_modelRenderer.render(); // This should be the final thing that runs here
 	}
