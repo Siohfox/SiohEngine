@@ -35,6 +35,12 @@ namespace SiohEngine
 		*/
 		virtual void OnDisplay();
 
+
+		/**
+		* @brief A virtual function for initialising a component's internal values.
+		*/
+		virtual void Start();
+
 		/**
 		* @brief A function for ticking each frame.
 		*/

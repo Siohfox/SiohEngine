@@ -9,8 +9,8 @@
 #include <AL/alc.h>
 #include <vector>
 
-#define INITIAL_WIDTH 640
-#define INITIAL_HEIGHT 480
+#define INITIAL_WIDTH 1920
+#define INITIAL_HEIGHT 1080
 
 namespace SiohEngine
 {

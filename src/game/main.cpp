@@ -1,6 +1,8 @@
 #include <iostream>
 #include <SiohEngine/SiohEngine.h>
-#include "Player.h"
+#include "gamefiles/Player.h"
+#include "gamefiles/Collectables.h"
+#include "gamefiles/GameManager.h"
 
 using namespace SiohEngine;
 
@@ -8,63 +10,6 @@ using namespace SiohEngine;
 #define weak std::weak_ptr
 #define transform GetEntity()->GetTransform()
 #define input GetEntity()->GetCore()->GetInput()
-
-
-struct Player : Component
-{
-	Player() : m_count(0) {}
-
-	/*std::shared_ptr<ModelLoad> maxwellModel = GetEntity()->GetCore()->GetCache()->load<ModelLoad>("../resources/models/maxwell/Maxwell.obj");
-	std::shared_ptr<TextureLoad> maxwellTexture = GetEntity()->GetCore()->GetCache()->load<TextureLoad>("../resources/models/maxwell/Maxwell_Diffuse.bmp");*/
-
-	void OnTick()
-	{
-	 m_count += 0.5f * Time::DeltaTime();
-
-
-		if (input->GetKey(Keys::W))
-		{
-			transform->AddPosition(vec3(0.0f, 0.0f, -0.1f));
-		}
-
-		if (input->GetKey(Keys::S))
-		{
-			transform->AddPosition(vec3(0.0f, 0.0f, 0.1f));
-		}
-
-		if (input->GetKey(Keys::A))
-		{
-			transform->AddPosition(vec3(-0.1f, 0.0f, 0.0f));
-		}
-
-		if (input->GetKey(Keys::D))
-		{
-			transform->AddPosition(vec3(0.1f, 0.0f, 0.0f));
-		}
-
-		if (input->GetKey(Keys::LCTRL))
-		{
-			transform->AddPosition(vec3(0.0f, -0.1f, 0.0f));
-		}
-
-		if (input->GetKey(Keys::SPACE))
-		{
-			transform->AddPosition(vec3(0.0f, 0.1f, 0.0f));
-		}
-
-		GetEntity()->GetTransform()->AddRotation(rend::vec3(0, m_count, 0));
-
-		/*std::shared_ptr<Entity> potato = GetEntity()->GetCore()->AddEntity();
-		potato->AddComponent<ModelRenderer>();
-		potato->GetComponent<ModelRenderer>()->SetModel(maxwellModel);
-		potato->GetComponent<ModelRenderer>()->SetTexture(maxwellTexture);
-		potato->GetComponent<Transform>()->SetPosition(vec3(0.0f, 0.0f + m_count, 0.0f));*/
-	}
-
-
-private:
-	float m_count;
-};
 
 struct Floor : Component
 {
@@ -120,6 +65,7 @@ int main(int argc, char* argv[])
 
 	//AudioClip clip;
 	std::shared_ptr<AudioClip> clip = core->GetCache()->load<AudioClip>("../resources/FreeBirb.ogg");
+	std::shared_ptr<AudioClip> clip2 = core->GetCache()->load<AudioClip>("../resources/terrar.ogg");
 
 	//Models
 	std::shared_ptr<ModelLoad> maxwellModel = core->GetCache()->load<ModelLoad>("../resources/models/maxwell/Maxwell.obj");
@@ -140,6 +86,13 @@ int main(int argc, char* argv[])
 	camera->GetTransform()->SetRotation(vec3(-20.0f, 0.0f, 0.0f));
 
 	/*************************************************************************
+	* Game Manager set up
+	*************************************************************************/
+	std::shared_ptr<Entity> gameManager = core->AddEntity();
+	gameManager->AddComponent<GameManager>();
+
+
+	/*************************************************************************
 	* Entities
 	*************************************************************************/
 	// ent 1
@@ -151,7 +104,7 @@ int main(int argc, char* argv[])
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
 	entity->GetTransform()->SetScale(vec3(0.1f));
 	entity->AddComponent<AudioSource>();
-	entity->GetComponent<AudioSource>()->PlaySound(clip, 1.0f);
+	entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
 	entity->AddComponent<BoxCollider>();
 	entity->AddComponent<RigidBody>();
 
@@ -161,6 +114,8 @@ int main(int argc, char* argv[])
 	entity2->AddComponent<ModelRenderer>();
 	entity2->GetComponent<ModelRenderer>()->SetModel(floorModel);
 	entity2->GetComponent<ModelRenderer>()->SetTexture(floorTexture);
+	entity->AddComponent<AudioSource>();
+	entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
 	entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
 	entity2->GetTransform()->SetScale(vec3(10.0f));
 	entity2->AddComponent<BoxCollider>();
@@ -169,3 +124,4 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
+

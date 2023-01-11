@@ -85,6 +85,12 @@ namespace SiohEngine
 		float idealTime = 1.0f / 60.0f;
 		
 
+		// Call every entity's component's intialise methods.
+		for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
+		{
+			(*it)->Start();
+		}
+
 
 		while (m_running)
 		{

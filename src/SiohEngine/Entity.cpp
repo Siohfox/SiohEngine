@@ -54,4 +54,13 @@ namespace SiohEngine
 			(*it)->Display();
 		}
 	}
+
+
+	void Entity::Start()
+	{
+		for (std::list<std::shared_ptr<Component>>::iterator it = m_components.begin(); it != m_components.end(); ++it)
+		{
+			(*it)->Start();
+		}
+	}
 }

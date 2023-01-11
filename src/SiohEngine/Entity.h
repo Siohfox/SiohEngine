@@ -106,6 +106,11 @@ namespace SiohEngine
 		*/
 		void Display();
 
+		/**
+		 * @brief A method to call each component's start
+		*/
+		void Start();
+
 		bool m_alive = true; ///< A bool to see if the entity is destroyed or not
 		std::string m_name; ///< The given name of the entity
 

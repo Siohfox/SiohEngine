@@ -13,6 +13,11 @@ namespace SiohEngine
 
 	}
 
+	void Component::Start()
+	{
+
+	}
+
 	void Component::Tick()
 	{
 		OnTick();

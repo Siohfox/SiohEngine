@@ -6,7 +6,7 @@
 namespace SiohEngine
 {
 	ModelRenderer::ModelRenderer() :
-		m_modelRenderer(640, 480),
+		m_modelRenderer(1920, 1080),
 		m_shader("../resources/shaders/basic.vert", "../resources/shaders/basic.frag")
 	{
 		//m_model = new rend::Model("../resources/models/maxwell/Maxwell.obj");
