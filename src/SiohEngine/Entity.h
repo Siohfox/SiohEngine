@@ -74,6 +74,12 @@ namespace SiohEngine
 		std::shared_ptr<Transform> GetTransform();
 
 		/**
+		 * @brief A getter to get the name of the entity
+		 * @return The name of the entity as a string
+		*/
+		std::string GetName();
+
+		/**
 		 * @brief A getter to get the core
 		 * @return A pointer to the core
 		*/

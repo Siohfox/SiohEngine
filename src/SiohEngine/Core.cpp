@@ -66,6 +66,20 @@ namespace SiohEngine
 		return rtn;
 	}
 
+	std::shared_ptr<Entity> Core::AddEntity(std::string name)
+	{
+		std::shared_ptr<Entity> rtn = std::make_shared<Entity>();
+
+		rtn->m_self = rtn;
+		rtn->m_core = m_self;
+		rtn->m_transform = rtn->AddComponent<Transform>();
+		rtn->m_name = name;
+
+		m_entities.push_back(rtn);
+
+		return rtn;
+	}
+
 	void Core::Start()
 	{
 		m_running = true;
@@ -115,7 +129,6 @@ namespace SiohEngine
 				case SDL_KEYDOWN:
 					if (!m_input->GetKey(event.key.keysym.sym))
 					{
-						std::cout << "keydown" << std::endl;
 						m_input->keyDown.push_back(event.key.keysym.sym);
 						m_input->keys.push_back(event.key.keysym.sym);
 					}
@@ -124,7 +137,6 @@ namespace SiohEngine
 				case SDL_KEYUP:
 					if (m_input->GetKey(event.key.keysym.sym))
 					{
-						std::cout << "keyup" << std::endl;
 						m_input->keys.remove(event.key.keysym.sym);
 						m_input->keyUp.push_back(event.key.keysym.sym);
 					}
@@ -190,6 +202,17 @@ namespace SiohEngine
 	std::shared_ptr<Input> Core::GetInput()
 	{
 		return m_input;
+	}
+
+	std::shared_ptr<Entity> Core::GetEntityByName(std::string name)
+	{
+		for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
+		{
+			if ((*it)->GetName() == name)
+			{
+				return (*it);
+			}
+		}
 	}
 
 	std::shared_ptr<Entity> Core::AddEntity()

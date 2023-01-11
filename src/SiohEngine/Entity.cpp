@@ -21,6 +21,11 @@ namespace SiohEngine
 		return m_transform.lock();
 	}
 
+	std::string Entity::GetName()
+	{
+		return m_name;
+	}
+
 	std::shared_ptr<Core> Entity::GetCore()
 	{
 		return m_core.lock();

@@ -63,7 +63,10 @@ struct Player : Component
 			potato->GetComponent<Transform>()->SetRotation(transform->GetRotation());
 		}
 
-
+		if (input->GetKey(Keys::I))
+		{
+			std::cout << GetEntity()->GetCore()->GetEntityByName("Game Manager")->GetComponent<Transform>()->GetPosition().x;
+		}
 	}
 
 

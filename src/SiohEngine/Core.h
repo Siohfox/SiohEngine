@@ -41,6 +41,12 @@ namespace SiohEngine
 		std::shared_ptr<Entity> AddEntity();
 
 		/**
+		 * @brief A function to add new entities with a name to the hierarchy
+		 * @return A pointer to the new entity
+		*/
+		std::shared_ptr<Entity> AddEntity(std::string name);
+
+		/**
 		 * @brief A function to start the engine and game loop
 		*/
 		void Start();
@@ -80,7 +86,11 @@ namespace SiohEngine
 		
 
 		std::shared_ptr<Cache> GetCache();
+
+
 		std::shared_ptr<Input> GetInput();
+
+		std::shared_ptr<Entity> GetEntityByName(std::string name);
 
 
 	private:

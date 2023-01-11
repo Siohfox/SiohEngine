@@ -60,6 +60,9 @@ private:
 
 int main(int argc, char* argv[])
 {
+
+	srand(static_cast<unsigned int>(time(0)));
+
 	// Initialise Engine
 	shared<Core> core = Core::Init();
 
@@ -78,7 +81,7 @@ int main(int argc, char* argv[])
 	/*************************************************************************
 	* Camera set up
 	*************************************************************************/
-	std::shared_ptr<Entity> camera = core->AddEntity();
+	std::shared_ptr<Entity> camera = core->AddEntity("Camera");
 	std::shared_ptr<Camera> mainCam = camera->AddComponent<Camera>();
 	mainCam->SetMainCam(mainCam);
 	camera->AddComponent<Camewa>();
@@ -88,7 +91,7 @@ int main(int argc, char* argv[])
 	/*************************************************************************
 	* Game Manager set up
 	*************************************************************************/
-	std::shared_ptr<Entity> gameManager = core->AddEntity();
+	std::shared_ptr<Entity> gameManager = core->AddEntity("Game Manager");
 	gameManager->AddComponent<GameManager>();
 
 
@@ -96,7 +99,7 @@ int main(int argc, char* argv[])
 	* Entities
 	*************************************************************************/
 	// ent 1
-	std::shared_ptr<Entity> entity = core->AddEntity();
+	std::shared_ptr<Entity> entity = core->AddEntity("Maxwell");
 	entity->AddComponent<Player>();
 	entity->AddComponent<ModelRenderer>();
 	entity->GetComponent<ModelRenderer>()->SetModel(maxwellModel);
