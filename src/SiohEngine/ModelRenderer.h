@@ -19,7 +19,16 @@ namespace SiohEngine
 		*/
 		ModelRenderer();
 
+		/**
+		 * @brief Sets the texture of the model
+		 * @param texture The cached texture to load from
+		*/
 		void SetTexture(std::shared_ptr<TextureLoad> texture);
+
+		/**
+		 * @brief Sets the model
+		 * @param texture The cached model to load from
+		*/
 		void SetModel(std::shared_ptr<ModelLoad> model);
 
 	private:

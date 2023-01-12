@@ -7,7 +7,7 @@
 
 namespace SiohEngine
 {
-	struct Shader : Cache
+	struct Shader : Resource
 	{
 		void OnLoad();
 	};

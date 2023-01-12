@@ -39,7 +39,7 @@ namespace SiohEngine
 
 		}
 	private:
-		std::vector<std::shared_ptr<Resource>> m_resources;
+		std::vector<std::shared_ptr<Resource>> m_resources; ///< A vector of pointers to resourcesd
 	};
 }
 

@@ -2,13 +2,13 @@
 
 namespace SiohEngine
 {
-	void ModelLoad::load_model(const std::string _path)
+	void ModelLoad::LoadModel(const std::string _path)
 	{
 		m_model = new rend::Model(_path.c_str());
 	}
 
 	void ModelLoad::OnLoad()
 	{
-		load_model(GetPath());
+		LoadModel(GetPath());
 	}
 }

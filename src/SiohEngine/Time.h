@@ -39,11 +39,11 @@ namespace SiohEngine
 
 		void Update();
 
-		static double m_deltaTime;
-		double m_lastTime;
-		double m_currentTime;
-		double m_frameRate;
-		double m_diff;
+		static double m_deltaTime; ///< Delta time
+		double m_lastTime; ///< The last time recieved
+		double m_currentTime; ///< The current given time
+		double m_frameRate; ///< The ideal frameRate
+		double m_diff; ///< The difference of given time and last time
 	};
 }
 #endif

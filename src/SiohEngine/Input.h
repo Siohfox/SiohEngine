@@ -10,17 +10,34 @@ namespace SiohEngine
 	struct Input
 	{
 	public:
+		/**
+		 * @brief A getter to return correct key pressed
+		 * @param code The keycode to be checked
+		 * @return The given key
+		*/
 		bool GetKey(SDL_Keycode code);
+
+		/**
+		 * @brief A getter to return correct key down
+		 * @param code The keycode to be checked
+		 * @return The given key
+		*/
 		bool GetKeyDown(SDL_Keycode code);
+
+		/**
+		 * @brief A getter to return correct key up
+		 * @param code The keycode to be checked
+		 * @return The given key
+		*/
 		bool GetKeyUp(SDL_Keycode code);
 		
 
 	private:
 		friend struct Core;
 
-		static std::list<SDL_Keycode> keys;
-		static std::list<SDL_Keycode> keyDown;
-		static std::list<SDL_Keycode> keyUp;
+		static std::list<SDL_Keycode> keys; ///< A list of keys
+		static std::list<SDL_Keycode> keyDown; ///< A list of keys
+		static std::list<SDL_Keycode> keyUp; ///< A list of keys
 	};
 
 	struct Keys

@@ -17,6 +17,9 @@ namespace SiohEngine
 
 	struct AudioClip : Resource
 	{
+		/**
+		 * @brief AudioClip constructor
+		*/
 		AudioClip();
 
 		/**

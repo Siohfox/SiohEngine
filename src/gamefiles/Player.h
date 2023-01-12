@@ -5,11 +5,6 @@
 
 using namespace SiohEngine;
 
-#define shared std::shared_ptr
-#define weak std::weak_ptr
-#define transform GetEntity()->GetTransform()
-#define input GetEntity()->GetCore()->GetInput()
-
 
 struct Player : Component
 {
@@ -66,6 +61,18 @@ struct Player : Component
 		if (input->GetKey(Keys::I))
 		{
 			std::cout << GetEntity()->GetCore()->GetEntityByName("Game Manager")->GetComponent<Transform>()->GetPosition().x;
+		}
+
+		if (input->GetKey(Keys::K))
+		{
+			//GetEntity()->Kill();
+		}
+
+		if (GetEntity()->GetComponent<RigidBody>()->CheckCollision().isColliding)
+		{
+			std::cout << "bork";
+			//GetEntity()->GetComponent<RigidBody>()->CheckCollision().collider->GetEntity()->Kill();
+
 		}
 	}
 

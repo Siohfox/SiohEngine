@@ -12,15 +12,26 @@ namespace SiohEngine
 
 	struct Resource
 	{
-
 		public:
+		/**
+		 * @brief A pure virtual function to allow different types of loading
+		*/
 		virtual void OnLoad() = 0;
+
+		/**
+		 * @brief A Getter for the current string path
+		 * @return m_path
+		*/
 		std::string GetPath() const;
 
 	private:
 		friend struct Cache;
 
-		std::string m_path;
+		std::string m_path; ///< The current file path
+
+		/**
+		 * @brief Calls OnLoad()
+		*/
 		void Load();
 	};
 }

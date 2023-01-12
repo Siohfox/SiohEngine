@@ -9,6 +9,7 @@
 #include <AL/alc.h>
 #include <vector>
 
+// Definitions for intial window width and height
 #define INITIAL_WIDTH 1920
 #define INITIAL_HEIGHT 1080
 
@@ -84,29 +85,42 @@ namespace SiohEngine
 			}
 		}
 		
-
+		/**
+		 * @brief Gets the cache stored
+		 * @return m_cache
+		*/
 		std::shared_ptr<Cache> GetCache();
 
-
+		/**
+		 * @brief Gets the input
+		 * @return m_input
+		*/
 		std::shared_ptr<Input> GetInput();
 
+		/**
+		 * @brief Gets an entity by finding it from a string name
+		 * @param name The name of the entity to be searched for
+		 * @return The first entity found with the given name
+		*/
 		std::shared_ptr<Entity> GetEntityByName(std::string name);
 
 
 	private:
-		bool m_running;
+		bool m_running; ///< Whether the engine is running or not
 
-		std::shared_ptr<Input> m_input;
+		std::shared_ptr<Input> m_input; ///< A pointer to the input class
+		std::shared_ptr<Time> m_time; ///< A pointer to the time class
+		std::shared_ptr<Cache> m_cache; ///< A pointer to the stored cache class
+		std::list<std::shared_ptr<Entity>> m_entities; ///< A list of pointers to stored entities
+		std::weak_ptr<Core> m_self; ///< A weak pointer to the core itself
 
-		ALCdevice* m_audioDevice;
-		ALCcontext* m_audioContext;
-		std::shared_ptr<Cache> m_cache;
+		// ALC
+		ALCdevice* m_audioDevice; ///< Audio device
+		ALCcontext* m_audioContext; ///< Audio context
 
-		std::weak_ptr<Core> m_self;
-		SDL_Window* m_window;
-		SDL_GLContext m_context;
-		std::list<std::shared_ptr<Entity>> m_entities;
-		std::shared_ptr<Time> m_time;
+		//SDL
+		SDL_Window* m_window; ///< An SDL window pointer
+		SDL_GLContext m_context; ///< The GL context	
 	};
 }
 #endif

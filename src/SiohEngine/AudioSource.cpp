@@ -21,10 +21,5 @@ namespace SiohEngine
 		alSourcei(m_sourceId, AL_BUFFER, clip->GetBufferId());
 		alSourcePlay(m_sourceId);
 	}
-
-	void AudioSource::SetAudio()
-	{
-
-	}
 }
 

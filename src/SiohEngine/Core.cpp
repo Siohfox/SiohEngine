@@ -156,7 +156,7 @@ namespace SiohEngine
 			double elapsedTime = Time::GetTimeMilliSeconds() / 1000.0f;
 
 			// Calculate the interpolation factor t
-			t = (elapsedTime - startTime) / (endTime - startTime);
+			t = (elapsedTime - startTime) / ((double)endTime - startTime);
 
 			if (Time::GetTimeSeconds() >= 10)
 			{		

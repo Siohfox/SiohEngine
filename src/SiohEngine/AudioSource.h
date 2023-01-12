@@ -30,8 +30,6 @@ namespace SiohEngine
 		*/
 		void PlaySound(std::shared_ptr<AudioClip> clip, ALfloat volume);
 
-		void SetAudio();
-
 	private:
 		ALuint m_sourceId; ///< The audio source Id
 	};
