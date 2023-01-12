@@ -135,6 +135,9 @@ add_executable(game
 
 	src/game/GameManager.h
 	src/game/GameManager.cpp
+
+	src/game/MainCam.h
+	src/game/MainCam.cpp
 )
 
 
