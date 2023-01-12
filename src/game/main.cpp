@@ -76,6 +76,9 @@ int main(int argc, char* argv[])
 	std::shared_ptr<TextureLoad> maxwellTexture = core->GetCache()->load<TextureLoad>("../resources/models/maxwell/Maxwell_Diffuse.bmp");
 	std::shared_ptr<TextureLoad> floorTexture = core->GetCache()->load<TextureLoad>("../resources/models/floor/Stone_floor_albedo.png");
 
+	//Shaders
+	/*std::shared_ptr<TextureLoad> maxwellTexture = core->GetCache()->load<TextureLoad>("../resources/shaders/basic");*/
+
 	/*************************************************************************
 	* Camera set up
 	*************************************************************************/

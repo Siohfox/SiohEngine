@@ -35,7 +35,7 @@ namespace SiohEngine
 		rend::Mesh m_mesh;     ///< A member variable to hold the mesh for the model
 		rend::Shader m_shader; ///< A member variable to hold the shader files
 		rend::Model* m_model; ///< A member variable to hold the model
-		rend::Texture* m_texture; ///< A member variable to hold the texture of the model
+		std::shared_ptr<TextureLoad> m_texture; ///< A member variable to hold the texture of the model
 		rend::ModelRenderer m_modelRenderer; ///< A member variable to hold the modelRenderer
 
 		/**

@@ -19,7 +19,7 @@ namespace SiohEngine
 		 * @brief A function to load a shader onto the cache. Appends to m_shader.
 		 * @param _path The file path to search for the shader
 		*/
-		void LoadShader(const std::string _vertPath, const std::string _fragPath);
+		void LoadShader(const std::string& _path);
 
 		/**
 		 * @brief A function that calls LoadShader using given path.

@@ -6,13 +6,15 @@
 
 namespace SiohEngine
 {
+	struct ModelRenderer;
+
 	struct TextureLoad : Resource
 	{
 		/**
 		 * @brief A getter for the stored texture
 		 * @return The stored model (m_texture)
 		*/
-		rend::Texture* GetRenderTexture() { return m_texture; }
+		//rend::Texture* GetRenderTexture() { return m_texture; }
 
 		/**
 		 * @brief A function to load a model onto the cache. Appends to m_texture.
@@ -26,7 +28,9 @@ namespace SiohEngine
 		void OnLoad();
 
 	private:
-		rend::Texture* m_texture; ///< A pointer to the stored texture
+		friend ModelRenderer;
+
+		std::shared_ptr<rend::Texture> m_texture; ///< A pointer to the stored texture
 
 	};
 }

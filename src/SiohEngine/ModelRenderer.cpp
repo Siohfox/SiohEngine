@@ -2,6 +2,7 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Camera.h"
+#include "TextureLoad.h"
 
 namespace SiohEngine
 {
@@ -14,8 +15,9 @@ namespace SiohEngine
 
 	void ModelRenderer::SetTexture(std::shared_ptr<TextureLoad> texturePath)
 	{
-		m_texture = texturePath->GetRenderTexture();
-		m_modelRenderer.texture(m_texture);
+		//m_texture = texturePath->GetRenderTexture();
+	/*	m_modelRenderer.texture(m_texture);*/
+		m_texture = texturePath;
 	}
 
 	void ModelRenderer::SetModel(std::shared_ptr<ModelLoad> modelPath)
@@ -25,6 +27,8 @@ namespace SiohEngine
 
 	void ModelRenderer::OnDisplay()
 	{
+		if (!m_texture) return;
+
 		mat4 model = m_entity.lock()->GetTransform()->GetModel();
 		m_modelRenderer.shader(&m_shader);
 
@@ -38,7 +42,7 @@ namespace SiohEngine
 		m_modelRenderer.backfaceCull(true);
 		m_modelRenderer.blend(true);
 
-		m_modelRenderer.texture(m_texture);
+		m_modelRenderer.texture(m_texture->m_texture.get());
 
 		m_modelRenderer.render(); // This should be the final thing that runs here
 	}

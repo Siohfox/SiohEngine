@@ -25,7 +25,7 @@ void GameManager::OnTick()
 		collectable->GetComponent<Transform>()->SetPosition(vec3(((float(rand()) / float(RAND_MAX)) * (spawnRangeMax - spawnRangeMin)) + spawnRangeMin, 0.0f, ((float(rand()) / float(RAND_MAX)) * (spawnRangeMax - spawnRangeMin)) + spawnRangeMin));
 		collectable->GetComponent<Transform>()->SetScale(vec3(0.1f));
 		collectable->AddComponent<AudioSource>();
-		collectable->GetComponent<AudioSource>()->PlaySound(GetEntity()->GetCore()->GetCache()->load<AudioClip>("../resources/monch.ogg"), 1.0f);
+		//collectable->GetComponent<AudioSource>()->PlaySound(GetEntity()->GetCore()->GetCache()->load<AudioClip>("../resources/monch.ogg"), 1.0f);
 		collectable->GetComponent<Transform>()->SetRotation(transform->GetRotation());
 		collectable->AddComponent<BoxCollider>();
 	}
