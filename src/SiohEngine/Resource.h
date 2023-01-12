@@ -14,7 +14,7 @@ namespace SiohEngine
 	{
 		public:
 		/**
-		 * @brief A pure virtual function to allow different types of loading
+		 * @brief A pure virtual function to allow loading
 		*/
 		virtual void OnLoad() = 0;
 

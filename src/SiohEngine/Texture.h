@@ -11,12 +11,6 @@ namespace SiohEngine
 	struct Texture : Resource
 	{
 		/**
-		 * @brief A getter for the stored texture
-		 * @return The stored model (m_texture)
-		*/
-		//rend::Texture* GetRenderTexture() { return m_texture; }
-
-		/**
 		 * @brief A function to load a model onto the cache. Appends to m_texture.
 		 * @param _path The file path to search for the texture
 		*/

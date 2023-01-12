@@ -2,7 +2,6 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Camera.h"
-#include "Texture.h"
 
 namespace SiohEngine
 {
@@ -15,8 +14,6 @@ namespace SiohEngine
 
 	void ModelRenderer::SetTexture(std::shared_ptr<Texture> texturePath)
 	{
-		//m_texture = texturePath->GetRenderTexture();
-	/*	m_modelRenderer.texture(m_texture);*/
 		m_texture = texturePath;
 	}
 
