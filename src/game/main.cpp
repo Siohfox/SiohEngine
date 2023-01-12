@@ -66,6 +66,7 @@ int main(int argc, char* argv[])
 	//AudioClip clip;
 	std::shared_ptr<AudioClip> clip = core->GetCache()->load<AudioClip>("../resources/FreeBirb.ogg");
 	std::shared_ptr<AudioClip> clip2 = core->GetCache()->load<AudioClip>("../resources/terrar.ogg");
+	std::shared_ptr<AudioClip> clip3 = core->GetCache()->load<AudioClip>("../resources/monch.ogg");
 
 	//Models
 	std::shared_ptr<ModelLoad> maxwellModel = core->GetCache()->load<ModelLoad>("../resources/models/maxwell/Maxwell.obj");
@@ -104,7 +105,7 @@ int main(int argc, char* argv[])
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
 	entity->GetTransform()->SetScale(vec3(0.1f));
 	entity->AddComponent<AudioSource>();
-	entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
+	//entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
 	entity->AddComponent<BoxCollider>();
 	entity->AddComponent<RigidBody>();
 
@@ -115,7 +116,7 @@ int main(int argc, char* argv[])
 	entity2->GetComponent<ModelRenderer>()->SetModel(floorModel);
 	entity2->GetComponent<ModelRenderer>()->SetTexture(floorTexture);
 	entity->AddComponent<AudioSource>();
-	entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
+	//entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
 	entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
 	entity2->GetTransform()->SetScale(vec3(10.0f));
 	entity2->AddComponent<BoxCollider>();

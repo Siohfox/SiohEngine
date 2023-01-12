@@ -13,7 +13,6 @@ void GameManager::Start()
 
 void GameManager::OnTick()
 {
-	std::cout << "Collectable count currently equal to: " << collectableCount << std::endl;
 	if (collectableCount <= maxCollectableCount)
 	{
 		collectableCount += 1;
@@ -21,10 +20,12 @@ void GameManager::OnTick()
 		std::shared_ptr<Entity> collectable = GetEntity()->GetCore()->AddEntity();
 
 		collectable->AddComponent<ModelRenderer>();
-		collectable->GetComponent<ModelRenderer>()->SetModel(GetEntity()->GetCore()->GetCache()->load<ModelLoad>("../resources/models/maxwell/Maxwell.obj"));
-		collectable->GetComponent<ModelRenderer>()->SetTexture(GetEntity()->GetCore()->GetCache()->load<TextureLoad>("../resources/models/maxwell/Maxwell_Diffuse.bmp"));
+		collectable->GetComponent<ModelRenderer>()->SetModel(GetEntity()->GetCore()->GetCache()->load<ModelLoad>("../resources/models/banana/ripe-banana.obj"));
+		collectable->GetComponent<ModelRenderer>()->SetTexture(GetEntity()->GetCore()->GetCache()->load<TextureLoad>("../resources/models/banana/ripe-banana_u1_v1.png"));
 		collectable->GetComponent<Transform>()->SetPosition(vec3(((float(rand()) / float(RAND_MAX)) * (spawnRangeMax - spawnRangeMin)) + spawnRangeMin, 0.0f, ((float(rand()) / float(RAND_MAX)) * (spawnRangeMax - spawnRangeMin)) + spawnRangeMin));
 		collectable->GetComponent<Transform>()->SetScale(vec3(0.1f));
+		collectable->AddComponent<AudioSource>();
+		collectable->GetComponent<AudioSource>()->PlaySound(GetEntity()->GetCore()->GetCache()->load<AudioClip>("../resources/monch.ogg"), 1.0f);
 		collectable->GetComponent<Transform>()->SetRotation(transform->GetRotation());
 		collectable->AddComponent<BoxCollider>();
 	}

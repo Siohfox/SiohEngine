@@ -17,7 +17,7 @@ struct GameManager : Component
 
 
 	void AddScore(int scoreAmount) { score += scoreAmount; }
-	void ModifyCollectableCount(int _collectableCount) { collectableCount = _collectableCount; }
+	void ModifyCollectableCount(int _collectableCount) { collectableCount -= _collectableCount; }
 	
 private:
 	int score;

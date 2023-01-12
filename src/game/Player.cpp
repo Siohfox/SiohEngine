@@ -64,11 +64,11 @@ void Player::OnTick()
 
 		GetEntity()->GetComponent<RigidBody>()->CheckCollision().other.lock()->GetEntity()->Kill();
 		
-
+		//GetEntity()->GetComponent<RigidBody>()->CheckCollision().other.lock()->GetEntity()->GetComponent<AudioSource>()->PlaySound(GetEntity()->GetCore()->GetCache()->load<AudioClip>("../resources/monch.ogg"), 1.0f);
 
 		GetEntity()->GetCore()->GetEntityByName("Game Manager")->GetComponent<GameManager>()->AddScore(2500);
 
-		GetEntity()->GetCore()->GetEntityByName("Game Manager")->GetComponent<GameManager>()->ModifyCollectableCount(-1);
+		GetEntity()->GetCore()->GetEntityByName("Game Manager")->GetComponent<GameManager>()->ModifyCollectableCount(1);
 
 		std::cout << "Score = " << GetEntity()->GetCore()->GetEntityByName("Game Manager")->GetComponent<GameManager>()->ReturnScore() << std::endl;
 
