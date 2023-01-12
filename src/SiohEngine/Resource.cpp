@@ -1,11 +1,14 @@
 #include "Resource.h"
 
-std::string SiohEngine::Resource::GetPath() const
+namespace SiohEngine
 {
-    return m_path;
-}
+    std::string Resource::GetPath() const
+    {
+        return m_path;
+    }
 
-void SiohEngine::Resource::Load()
-{
-    OnLoad();
+    void Resource::Load()
+    {
+        OnLoad();
+    }
 }

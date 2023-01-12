@@ -7,13 +7,11 @@ namespace SiohEngine
 	Entity::Entity()
 	{
 		m_name = "GenericObject";
-		std::cout << "Creating Entity\n";
 	}
 
 	Entity::Entity(std::string name)
 	{
 		m_name = name;
-		std::cout << "Creating Entity known as " + m_name;
 	}
 
 	std::shared_ptr<Transform> Entity::GetTransform()

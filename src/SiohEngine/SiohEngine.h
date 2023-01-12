@@ -14,7 +14,7 @@
 #include "RigidBody.h"
 #include "Resource.h"
 #include "SiohMath.h"
-#include "Shader.h"
+#include "ShaderLoad.h"
 #include "TextureLoad.h"
 #include "TriangleRenderer.h"
 #include "Transform.h"
