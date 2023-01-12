@@ -74,6 +74,11 @@ namespace SiohEngine
 				for (std::list<std::shared_ptr<Component>>::iterator itt = e->m_components.begin(); itt != e->m_components.end(); ++itt)
 				{
 					std::shared_ptr<Component> c = *itt;
+
+					if (!c->m_alive)
+					{
+						continue;
+					}
 					// Try to dynamic cast the Component to a T.
 					std::shared_ptr<T> t = std::dynamic_pointer_cast<T>(c);
 					// If succeeds then add it to the output array.

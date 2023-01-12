@@ -21,16 +21,6 @@ namespace SiohEngine
 	}
 	mat4 Camera::GetView()
 	{
-		std::shared_ptr<Transform> trans = GetEntity()->GetTransform();
-
-		mat4 rotationMat = mat4(1.0f);
-		mat4 translationMat = mat4(1.0f);
-
-		translationMat = glm::translate(translationMat, -trans->GetPosition());
-		rotationMat = rotate(rotationMat, radians(-trans->GetRotation().y), vec3(0.0f, 1.0f, 0.0f)); // favouring y
-		rotationMat = rotate(rotationMat, radians(-trans->GetRotation().x), vec3(1.0f, 0.0f, 0.0f));
-		rotationMat = rotate(rotationMat, radians(-trans->GetRotation().z), vec3(0.0f, 0.0f, 1.0f));
-
-		return translationMat * rotationMat;
+		return glm::inverse(GetEntity()->GetTransform()->GetModel());
 	}
 }

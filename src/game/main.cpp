@@ -1,8 +1,8 @@
 #include <iostream>
 #include <SiohEngine/SiohEngine.h>
-#include "gamefiles/Player.h"
-#include "gamefiles/Collectables.h"
-#include "gamefiles/GameManager.h"
+#include "game/Player.h"
+#include "game/Collectables.h"
+#include "game/GameManager.h"
 
 using namespace SiohEngine;
 

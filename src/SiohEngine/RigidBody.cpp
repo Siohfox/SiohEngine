@@ -2,6 +2,7 @@
 
 #include "Entity.h"
 #include "Core.h"
+#include "Transform.h"
 
 
 namespace SiohEngine
@@ -14,9 +15,13 @@ namespace SiohEngine
 
     void RigidBody::OnTick()
     {
+
+        m_collision.colliders.clear();
         GetEntity()->GetCore()->Find<BoxCollider>(m_collision.colliders);
 
 
+        m_collision.isColliding = false;
+        m_collision.other.reset();
 
         for (size_t i = 0; i < m_collision.colliders.size(); i++)
         {
@@ -28,15 +33,9 @@ namespace SiohEngine
 
             if (m_collision.colliders.at(i)->Colliding(*m_collision.collider))
             {
-                //std::cout << "Colliding!\n";
+                m_collision.other = m_collision.colliders.at(i);
                 m_collision.isColliding = true;
             }
-            else
-            {
-                m_collision.isColliding = false;
-            }
-
-            //std::cout << m_collision.isColliding << std::endl;
         }
     }
 

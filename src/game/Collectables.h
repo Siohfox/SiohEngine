@@ -13,8 +13,5 @@ struct Collectables : Component
 
 	~Collectables();
 
-	void OnTick()
-	{
-		std::cout << "hi";
-	}
+	void OnTick();
 };

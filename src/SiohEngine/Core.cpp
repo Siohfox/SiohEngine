@@ -178,12 +178,15 @@ namespace SiohEngine
 			SDL_GL_SwapWindow(m_window);
 
 			// Erase dead entities
-			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end(); ++it)
+			for (std::list<std::shared_ptr<Entity>>::iterator it = m_entities.begin(); it != m_entities.end();)
 			{
 				if (!(*it)->IsAlive())
 				{
-					m_entities.erase(it);
-					--it;
+					it = m_entities.erase(it);
+				}
+				else
+				{
+					++it;
 				}
 			}
 		}

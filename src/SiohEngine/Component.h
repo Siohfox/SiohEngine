@@ -22,8 +22,10 @@ namespace SiohEngine
 		std::shared_ptr<Entity>  GetEntity() const;
 
 
+
 	private:
 		friend struct Entity;
+		friend struct Core;
 
 		/**
 		* @brief A virtual function for ticking each frame.

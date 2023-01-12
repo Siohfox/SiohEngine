@@ -48,6 +48,7 @@ namespace SiohEngine
 			(*it)->Tick();
 		}
 
+		// remoce killed
 	}
 
 	void Entity::Display()

@@ -121,20 +121,20 @@ add_library(SiohEngine
 	src/SiohEngine/Skybox.cpp
 )
 
-add_library(gamefiles
-	src/gamefiles/Player.h
-	src/gamefiles/Player.cpp
-
-	src/gamefiles/Collectables.h
-
-	src/gamefiles/GameManager.h
-)
-
 target_link_libraries(SiohEngine rend SDL2 ${LIBSDL2MAIN} ${LIBOPENAL})
 
 
 add_executable(game
 	src/game/main.cpp
+
+	src/game/Player.h
+	src/game/Player.cpp
+
+	src/game/Collectables.h
+	src/game/Collectables.cpp
+
+	src/game/GameManager.h
+	src/game/GameManager.cpp
 )
 
 

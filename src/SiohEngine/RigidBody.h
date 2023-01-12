@@ -15,6 +15,7 @@ namespace SiohEngine
 		bool isColliding;
 		std::vector<std::shared_ptr<BoxCollider>> colliders;
 		std::shared_ptr<BoxCollider> collider;
+		std::weak_ptr<BoxCollider> other;
 	};
 
 	struct RigidBody : Component
