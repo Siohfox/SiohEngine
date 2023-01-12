@@ -42,8 +42,8 @@ void Player::OnTick()
 	{
 		std::shared_ptr<Entity> potato = GetEntity()->GetCore()->AddEntity();
 		potato->AddComponent<ModelRenderer>();
-		potato->GetComponent<ModelRenderer>()->SetModel(GetEntity()->GetCore()->GetCache()->load<ModelLoad>("../resources/models/maxwell/Maxwell.obj"));
-		potato->GetComponent<ModelRenderer>()->SetTexture(GetEntity()->GetCore()->GetCache()->load<TextureLoad>("../resources/models/maxwell/Maxwell_Diffuse.bmp"));
+		potato->GetComponent<ModelRenderer>()->SetModel(GetEntity()->GetCore()->GetCache()->load<Model>("../resources/models/maxwell/Maxwell.obj"));
+		potato->GetComponent<ModelRenderer>()->SetTexture(GetEntity()->GetCore()->GetCache()->load<Texture>("../resources/models/maxwell/Maxwell_Diffuse.bmp"));
 		potato->GetComponent<Transform>()->SetPosition(transform->GetPosition());
 		potato->GetComponent<Transform>()->SetScale(vec3(0.1f));
 		potato->GetComponent<Transform>()->SetRotation(transform->GetRotation());

@@ -1,5 +1,5 @@
-#ifndef SIOHENGINE_SHADERLOAD_H
-#define SIOHENGINE_SHADERLOAD_H
+#ifndef SIOHENGINE_SHADER_H
+#define SIOHENGINE_SHADER_H
 
 #include "Cache.h"
 #include <iostream>
@@ -7,13 +7,15 @@
 
 namespace SiohEngine
 {
-	struct ShaderLoad : Resource
+	struct ModelRenderer;
+
+	struct Shader : Resource
 	{
 		/**
 		 * @brief A getter for the stored shader
 		 * @return The stored shader (m_shader)
 		*/
-		rend::Shader* GetShader() { return m_shader; }
+		/*rend::Shader* GetShader() { return m_shader; }*/
 
 		/**
 		 * @brief A function to load a shader onto the cache. Appends to m_shader.
@@ -27,7 +29,9 @@ namespace SiohEngine
 		void OnLoad();
 
 	private:
-		rend::Shader* m_shader; ///< A pointer to the stored shader
+		friend ModelRenderer;
+
+		std::shared_ptr<rend::Shader> m_shader; ///< A pointer to the stored shader
 	};
 }
 #endif

@@ -69,12 +69,12 @@ int main(int argc, char* argv[])
 	std::shared_ptr<AudioClip> clip3 = core->GetCache()->load<AudioClip>("../resources/monch.ogg");
 
 	//Models
-	std::shared_ptr<ModelLoad> maxwellModel = core->GetCache()->load<ModelLoad>("../resources/models/maxwell/Maxwell.obj");
-	std::shared_ptr<ModelLoad> floorModel = core->GetCache()->load<ModelLoad>("../resources/models/floor/LP_Stone_floor.obj");
+	std::shared_ptr<Model> maxwellModel = core->GetCache()->load<Model>("../resources/models/maxwell/Maxwell.obj");
+	std::shared_ptr<Model> floorModel = core->GetCache()->load<Model>("../resources/models/floor/LP_Stone_floor.obj");
 
 	//Textures
-	std::shared_ptr<TextureLoad> maxwellTexture = core->GetCache()->load<TextureLoad>("../resources/models/maxwell/Maxwell_Diffuse.bmp");
-	std::shared_ptr<TextureLoad> floorTexture = core->GetCache()->load<TextureLoad>("../resources/models/floor/Stone_floor_albedo.png");
+	std::shared_ptr<Texture> maxwellTexture = core->GetCache()->load<Texture>("../resources/models/maxwell/Maxwell_Diffuse.bmp");
+	std::shared_ptr<Texture> floorTexture = core->GetCache()->load<Texture>("../resources/models/floor/Stone_floor_albedo.png");
 
 	//Shaders
 	/*std::shared_ptr<TextureLoad> maxwellTexture = core->GetCache()->load<TextureLoad>("../resources/shaders/basic");*/
@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
 	entity->GetTransform()->SetScale(vec3(0.1f));
 	entity->AddComponent<AudioSource>();
-	//entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
+	entity->GetComponent<AudioSource>()->PlaySound(clip2, 0.5f);
 	entity->AddComponent<BoxCollider>();
 	entity->AddComponent<RigidBody>();
 
@@ -122,7 +122,7 @@ int main(int argc, char* argv[])
 	//entity->GetComponent<AudioSource>()->PlaySound(clip2, 1.0f);
 	entity2->GetTransform()->SetPosition(vec3(2.0f, -0.5f, -10.0f));
 	entity2->GetTransform()->SetScale(vec3(10.0f));
-	entity2->AddComponent<BoxCollider>();
+	//entity2->AddComponent<BoxCollider>();
 
 	core->Start(); // Start the engine loop
 

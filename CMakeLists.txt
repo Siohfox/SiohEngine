@@ -105,14 +105,14 @@ add_library(SiohEngine
 	src/SiohEngine/Input.h
 	src/SiohEngine/Input.cpp
 
-	src/SiohEngine/ShaderLoad.h
-	src/SiohEngine/ShaderLoad.cpp
+	src/SiohEngine/Shader.h
+	src/SiohEngine/Shader.cpp
 
-	src/SiohEngine/TextureLoad.h
-	src/SiohEngine/TextureLoad.cpp
+	src/SiohEngine/Texture.h
+	src/SiohEngine/Texture.cpp
 
-	src/SiohEngine/ModelLoad.h
-	src/SiohEngine/ModelLoad.cpp
+	src/SiohEngine/Model.h
+	src/SiohEngine/Model.cpp
 
 	src/SiohEngine/Cache.h
 	src/SiohEngine/Cache.cpp

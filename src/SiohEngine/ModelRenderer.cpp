@@ -2,7 +2,7 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "Camera.h"
-#include "TextureLoad.h"
+#include "Texture.h"
 
 namespace SiohEngine
 {
@@ -13,16 +13,16 @@ namespace SiohEngine
 		//m_model = new rend::Model("../resources/models/maxwell/Maxwell.obj");
 	}
 
-	void ModelRenderer::SetTexture(std::shared_ptr<TextureLoad> texturePath)
+	void ModelRenderer::SetTexture(std::shared_ptr<Texture> texturePath)
 	{
 		//m_texture = texturePath->GetRenderTexture();
 	/*	m_modelRenderer.texture(m_texture);*/
 		m_texture = texturePath;
 	}
 
-	void ModelRenderer::SetModel(std::shared_ptr<ModelLoad> modelPath)
+	void ModelRenderer::SetModel(std::shared_ptr<Model> modelPath)
 	{
-		m_model = modelPath->GetRenderModel();
+		m_model = modelPath;
 	}
 
 	void ModelRenderer::OnDisplay()
@@ -36,7 +36,7 @@ namespace SiohEngine
 		m_modelRenderer.view(Camera::GetMainCam()->GetView());
 
 		((rend::Renderer*)(&m_modelRenderer))->model(model);
-		m_modelRenderer.model(m_model);
+		m_modelRenderer.model(m_model->m_model.get());
 
 		m_modelRenderer.depthTest(true);
 		m_modelRenderer.backfaceCull(true);

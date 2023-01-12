@@ -1,5 +1,5 @@
-#ifndef SIOHENGINE_TEXTURELOAD_H
-#define SIOHENGINE_TEXTURELOAD_H
+#ifndef SIOHENGINE_TEXTURE_H
+#define SIOHENGINE_TEXTURE_H
 
 #include "Cache.h"
 #include "rend/rend.h"
@@ -8,7 +8,7 @@ namespace SiohEngine
 {
 	struct ModelRenderer;
 
-	struct TextureLoad : Resource
+	struct Texture : Resource
 	{
 		/**
 		 * @brief A getter for the stored texture
@@ -20,7 +20,7 @@ namespace SiohEngine
 		 * @brief A function to load a model onto the cache. Appends to m_texture.
 		 * @param _path The file path to search for the texture
 		*/
-		void LoadTexture(const std::string _path); 
+		void LoadTexture(const std::string& _path); 
 
 		/**
 		 * @brief A function that calls LoadTexture using given path.

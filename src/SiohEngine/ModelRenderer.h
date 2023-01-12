@@ -2,8 +2,8 @@
 #define SIOHENGINE_MODELRENDERER_H
 
 #include "Component.h"
-#include "ModelLoad.h"
-#include "TextureLoad.h"
+#include "Model.h"
+#include "Texture.h"
 #include <string>
 #include <iostream>
 #include <rend/rend.h>
@@ -23,19 +23,19 @@ namespace SiohEngine
 		 * @brief Sets the texture of the model
 		 * @param texture The cached texture to load from
 		*/
-		void SetTexture(std::shared_ptr<TextureLoad> texture);
+		void SetTexture(std::shared_ptr<Texture> texture);
 
 		/**
 		 * @brief Sets the model
 		 * @param texture The cached model to load from
 		*/
-		void SetModel(std::shared_ptr<ModelLoad> model);
+		void SetModel(std::shared_ptr<Model> model);
 
 	private:
 		rend::Mesh m_mesh;     ///< A member variable to hold the mesh for the model
 		rend::Shader m_shader; ///< A member variable to hold the shader files
-		rend::Model* m_model; ///< A member variable to hold the model
-		std::shared_ptr<TextureLoad> m_texture; ///< A member variable to hold the texture of the model
+		std::shared_ptr<Model> m_model; ///< A member variable to hold the model
+		std::shared_ptr<Texture> m_texture; ///< A member variable to hold the texture of the model
 		rend::ModelRenderer m_modelRenderer; ///< A member variable to hold the modelRenderer
 
 		/**
