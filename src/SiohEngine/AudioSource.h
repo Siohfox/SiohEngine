@@ -27,8 +27,9 @@ namespace SiohEngine
 		 * @brief Plays a sound at the audio source with a given sound clip
 		 * @param clip The audio clip to play
 		 * @param volume How loud to play the clip (0.0f - 1.0f)
+		 * @param loop If the soud should loop or not
 		*/
-		void PlaySound(std::shared_ptr<AudioClip> clip, ALfloat volume);
+		void PlaySound(std::shared_ptr<AudioClip> clip, ALfloat volume, bool loop);
 
 	private:
 		ALuint m_sourceId; ///< The audio source Id

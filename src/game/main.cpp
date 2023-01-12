@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 	entity->GetTransform()->SetPosition(vec3(-0.5f, -0.5f, -10.0f));
 	entity->GetTransform()->SetScale(vec3(0.1f));
 	entity->AddComponent<AudioSource>();
-	entity->GetComponent<AudioSource>()->PlaySound(clip2, 0.5f);
+	entity->GetComponent<AudioSource>()->PlaySound(clip2, 0.5f, true);
 	entity->AddComponent<BoxCollider>();
 	entity->AddComponent<RigidBody>();
 

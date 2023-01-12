@@ -64,7 +64,7 @@ void Player::OnTick()
 
 		GetEntity()->GetComponent<RigidBody>()->CheckCollision().other.lock()->GetEntity()->Kill();
 		
-		GetEntity()->GetComponent<RigidBody>()->CheckCollision().other.lock()->GetEntity()->GetComponent<AudioSource>()->PlaySound(GetEntity()->GetCore()->GetCache()->load<AudioClip>("../resources/monch.ogg"), 1.0f);
+		GetEntity()->GetComponent<RigidBody>()->CheckCollision().other.lock()->GetEntity()->GetComponent<AudioSource>()->PlaySound(GetEntity()->GetCore()->GetCache()->load<AudioClip>("../resources/monch.ogg"), 1.0f, false);
 
 		GetEntity()->GetCore()->GetEntityByName("Game Manager")->GetComponent<GameManager>()->AddScore(2500);
 
